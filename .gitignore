@@ -1,0 +1,12 @@
+thesis.log
+*.aux
+thesis.bbl
+thesis.blg
+thesis.lof
+thesis.lol
+thesis.lot
+thesis.out
+thesis.pdf
+thesis.run.xml
+thesis.toc
+thesis-blx.bib

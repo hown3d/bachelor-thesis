@@ -39,4 +39,7 @@ docker-build:
 	@docker build -f Dockerfile.local -t hown3d/thesis .
 
 docker-run:
-	@docker run --rm --volume $(/bin/pwd):/thesis-template hown3d/thesis
+	@docker run --rm --volume $(shell /bin/pwd):/thesis-template hown3d/thesis
+
+deps:
+	@sudo cpan YAML:Tiny File:HomeDir Unicode::LineBreak
