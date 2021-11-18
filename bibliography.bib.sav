@@ -32,11 +32,13 @@
   year      = {2014},
   pages     = {410-416},
   doi       = {10.1109/WAINA.2014.72},
+  file      = {:/home/ludi/workspace/bachelor-thesis/sources/bousselmi2014.pdf:PDF},
+  groups    = {Related Work},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
 
 @Comment{jabref-meta: grouping:
 0 AllEntriesGroup:;
-1 StaticGroup:Related Work\;0\;1\;0x8a8a8aff\;\;\;;
+1 StaticGroup:Related Work\;0\;0\;0x8a8a8aff\;\;\;;
 }
