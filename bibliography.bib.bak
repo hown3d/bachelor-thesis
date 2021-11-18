@@ -20,18 +20,8 @@
   number    = {5},
   pages     = {921--935},
   volume    = {57},
-  file      = {:/home/ludi/workspace/bachelor-thesis/sources/baer2020.pdf:PDF},
   groups    = {Related Work},
   publisher = {Springer},
-}
-
-@InProceedings{6844672,
-  author    = {Bousselmi, Khadija and Brahmi, Zaki and Gammoudi, Mohamed Mohsen},
-  booktitle = {2014 28th International Conference on Advanced Information Networking and Applications Workshops},
-  title     = {Cloud Services Orchestration: A Comparative Study of Existing Approaches},
-  year      = {2014},
-  pages     = {410-416},
-  doi       = {10.1109/WAINA.2014.72},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
