@@ -1,0 +1,32 @@
+\section{Related Work}
+In \cite{Truyen2016} beschreiben \citeauthor{Truyen2016}
+das Erstellen von \emph{Multi-Tenant}\footnote{Teilen eines Systems mit anderen Nutzern, welche spezifische Privilegien innerhalb des Systems besitzen}
+\acf{SaaS} mithilfe von Container Orchestrierungssoftware wie Kubernetes.
+\acp{SaaS} werden immer häufiger auf skalierbaren Plattformen gehostet, um eine hohe Verfügbarkeit sowie Ausfallsicherheit zu gewährleisten.
+Innerhalb ihres Papers gehen sie auf die Vor- und Nachteile des Containeransatzes ein. 
+Ein klarer Vorteil sei die Möglichkeit des Multi-Cloud Modells, da Kubernetes unabhängig der jeweiligen Cloud Anbieter einsetzbar ist.
+und einen Standard implementieren.
+Isolationsmöglichkeiten zwischen den \emph{Tenants} habe einen hohen Anspruch für Sicherheit und Datenschutz.
+Ein weiterer Problemfall sei der hohe Aufwand zum Managment des Deployments der Anwendung.
+Sie präsentieren eine Referenzarchitektur zum Erstellen von Container basierten Multi-Tenant SaaSs.
+Einen fehlenden Standard für Container Images bemängeln sie zum Zeitpunkt ihrer Veröffentlichung.
+Als weiteren Verbesserungspunkt stellen \citeauthor{Truyen2016} 3 Möglichkeiten zur Isolation von Tenants vor.
+
+\paragraph{}
+Als weitere Möglichkeit zur Abstraktion von Softwaremanagment für Endnutzer entwickeln \citeauthor{Wieder2012} in ihrem Paper
+\cite{Wieder2012} ein System, das die Cloud-Kunden von der Last befreit, zu entscheiden, welche Dienste innerhalb einer Cloud zu verwenden.
+Dabei wird speziell auf den Fall von MapReduce Operationen eingegangen. Kunden sollen nur entsprechende Ziele definieren, beispielsweise
+die Minimierung der Kosten, eine Berechnung, die in der Cloud ausgeführt werden soll, sowie eine Liste von Cloud Services.
+Das System erstellt automatisch die Berechnung und optimiert während der Laufzeit die Anwendung basierend auf externen Zuständen.
+
+\paragraph{}
+Im Paper \cite{Bousselmi2014} wird das \ac{CPP} für SaaSs beschrieben, welches als Hauptziel die Optimierung der Ressourcennutzung
+der Cloudkomponenten sowie die Minimerung der Antwortzeit verfolgt.
+Eine gelungene Lösung für das \ac{CPP} solle folgende Anforderungen erfüllen:
+\begin{itemize}
+  \item \texttt{Platzierungsalgorithmus}
+  \item \texttt{Infrastrukturbeschreibung}
+  \item \texttt{Provisionierungsalgorithmus}
+  \item \texttt{Cloudunabhängig}
+\end{itemize}
+Desweiteren bieten \citeauthor{Bousselmi2015} eine Übersicht der bereits existierenden Lösungen des \ac{CPP} für \acp{SaaS}.

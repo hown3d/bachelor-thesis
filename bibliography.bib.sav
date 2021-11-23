@@ -1,6 +1,6 @@
 % Encoding: UTF-8
 
-@InProceedings{5254138,
+@InProceedings{Brandic2009,
   author    = {Brandic, Ivona},
   booktitle = {2009 33rd Annual IEEE International Computer Software and Applications Conference},
   title     = {Towards Self-Manageable Cloud Services},
@@ -12,7 +12,7 @@
   groups    = {Related Work},
 }
 
-@Article{bar2020ops4agile,
+@Article{Baer2020,
   author    = {B{\"a}r, Florian and Heinke, J{\"o}rg and Wachter, Bernd},
   journal   = {HMD Praxis der Wirtschaftsinformatik},
   title     = {Ops4Agile--Ein Ansatz f{\"u}r den agilen Betrieb von Cloud-Plattformen im Managed-Service-Kontext},
@@ -25,15 +25,45 @@
   publisher = {Springer},
 }
 
-@InProceedings{6844672,
-  author    = {Bousselmi, Khadija and Brahmi, Zaki and Gammoudi, Mohamed Mohsen},
-  booktitle = {2014 28th International Conference on Advanced Information Networking and Applications Workshops},
-  title     = {Cloud Services Orchestration: A Comparative Study of Existing Approaches},
-  year      = {2014},
-  pages     = {410-416},
-  doi       = {10.1109/WAINA.2014.72},
-  file      = {:/home/ludi/workspace/bachelor-thesis/sources/bousselmi2014.pdf:PDF},
+@InProceedings{Wieder2012,
+  author    = {Alexander Wieder and Parmod Bhatotia and Ansley Post and Rodrigo Rodrigues},
+  booktitle = {9th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 12)},
+  title     = {Orchestrating the Deployment of Computations in the Cloud with Conductor},
+  year      = {2012},
+  address   = {San Jose, CA},
+  month     = apr,
+  pages     = {367--381},
+  publisher = {{USENIX} Association},
   groups    = {Related Work},
+  isbn      = {978-931971-92-8},
+  url       = {https://www.usenix.org/conference/nsdi12/technical-sessions/presentation/wieder},
+}
+
+@InProceedings{Bousselmi2014,
+  author = {Bousselmi, Khadija and Brahmi, Zaki and Gammoudi, Mohamed},
+  title  = {Cloud Services Orchestration: A Comparative Study of Existing Approaches},
+  year   = {2014},
+  month  = {05},
+  doi    = {10.1109/WAINA.2014.72},
+  groups = {Related Work},
+}
+
+@InProceedings{Truyen2016,
+  author    = {Truyen, Eddy and Van Landuyt, Dimitri and Reniers, Vincent and Rafique, Ansar and Lagaisse, Bert and Joosen, Wouter},
+  booktitle = {Proceedings of the 15th International Workshop on Adaptive and Reflective Middleware},
+  title     = {Towards a Container-Based Architecture for Multi-Tenant SaaS Applications},
+  year      = {2016},
+  address   = {New York, NY, USA},
+  publisher = {Association for Computing Machinery},
+  series    = {ARM 2016},
+  abstract  = {SaaS providers continuously aim to optimize the cost-efficiency, scalability and trustworthiness of their offerings. Traditionally, these concerns have been addressed by application-level middleware platforms that implement a multi-tenant architecture.However, the recent uprise and industry adoption of container technology such as Docker and Kubernetes, exactly for the purpose of improving the cost-efficiency, elasticity and resilience of cloud native services, triggers the unanswered question whether and how container technology may affect such multi-tenant architectures.To answer this question, we outline our ideas on a container-based multi-tenant architecture for SaaS applications. Subsequently, we make an assessment of the technical Strengths, Weaknesses, Opportunities, and Threats (SWOT) which should be taken into account by a SaaS provider when considering the adoption of such container-based architecture.},
+  articleno = {6},
+  doi       = {10.1145/3008167.3008173},
+  groups    = {Related Work},
+  isbn      = {9781450346627},
+  location  = {Trento, Italy},
+  numpages  = {6},
+  url       = {https://doi.org/10.1145/3008167.3008173},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
