@@ -3,7 +3,7 @@ In \cite{Truyen2016} beschreiben \citeauthor{Truyen2016}
 das Erstellen von \emph{Multi-Tenant}\footnote{Teilen eines Systems mit anderen Nutzern, welche spezifische Privilegien innerhalb des Systems besitzen}
 \acf{SaaS} mithilfe von Container Orchestrierungssoftware wie Kubernetes.
 \acp{SaaS} werden immer häufiger auf skalierbaren Plattformen gehostet, um eine hohe Verfügbarkeit sowie Ausfallsicherheit zu gewährleisten.
-Innerhalb ihres Papers gehen sie auf die Vor- und Nachteile des Containeransatzes ein. 
+Innerhalb ihres Papers gehen sie auf die Vor- und Nachteile des Containeransatzes ein.
 Ein klarer Vorteil sei die Möglichkeit des Multi-Cloud Modells, da Kubernetes unabhängig der jeweiligen Cloud Anbieter einsetzbar ist.
 und einen Standard implementieren.
 Isolationsmöglichkeiten zwischen den \emph{Tenants} habe einen hohen Anspruch für Sicherheit und Datenschutz.
@@ -18,6 +18,7 @@ Als weitere Möglichkeit zur Abstraktion von Softwaremanagment für Endnutzer en
 Dabei wird speziell auf den Fall von MapReduce Operationen eingegangen. Kunden sollen nur entsprechende Ziele definieren, beispielsweise
 die Minimierung der Kosten, eine Berechnung, die in der Cloud ausgeführt werden soll, sowie eine Liste von Cloud Services.
 Das System erstellt automatisch die Berechnung und optimiert während der Laufzeit die Anwendung basierend auf externen Zuständen.
+Ein Problem liegt hierbei bei der Beschränkung auf kurzweilige Berechnungen, welche keine Grundlagen für \acp{SaaS} bieten.
 
 \paragraph{}
 Im Paper \cite{Bousselmi2014} wird das \ac{CPP} für SaaSs beschrieben, welches als Hauptziel die Optimierung der Ressourcennutzung
@@ -30,3 +31,6 @@ Eine gelungene Lösung für das \ac{CPP} solle folgende Anforderungen erfüllen:
   \item \texttt{Cloudunabhängig}
 \end{itemize}
 Desweiteren bieten \citeauthor{Bousselmi2014} eine Übersicht der bereits existierenden Lösungen des \ac{CPP} für \acp{SaaS}.
+Allerdings wurden nur das Nutzen von \acf{VM} bedacht, welche Nachteile gegenüber Container besitzen.
+Da \acp{VM} zusätzlich Hardware virtualisieren müssen, wodurch Ressourcen eingespart werden können. \cite{seo2014performance}.
+Außerdem besitzen Container eine bessere Kosteneffizienz sowie Performance im Vergleich zu \acp{VM}. \cite{soltesz2007container}
