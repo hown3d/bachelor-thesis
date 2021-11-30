@@ -107,9 +107,8 @@
 @TechReport{BMWi2019,
   author      = {BMWi},
   institution = {Federal Ministry for Economic Affairs and Energy (BMWi)},
-  title       = {Das Projekt GAIA-X: Eine vernetzte Dateninfrastruktur als Wiege eines vitalen, europäischen Ökosystems},
+  title       = {Project GAIA-X: A Federated Data Infrastructure as the Cradle of a Vibrant European Ecosystem},
   year        = {2019},
-  address     = {Berlin},
   month       = oct,
 }
 
