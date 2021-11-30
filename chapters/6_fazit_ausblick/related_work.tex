@@ -1,16 +1,19 @@
 \section{Related Work}
 In \cite{Truyen2016} beschreiben \citeauthor{Truyen2016}
-das Erstellen von \emph{Multi-Tenant}\footnote{Teilen eines Systems mit anderen Nutzern, welche spezifische Privilegien innerhalb des Systems besitzen}
+das Erstellen von \emph{Multi-Tenant}
 \acf{SaaS} mithilfe von Container Orchestrierungssoftware wie Kubernetes.
 \acp{SaaS} werden immer häufiger auf skalierbaren Plattformen gehostet, um eine hohe Verfügbarkeit sowie Ausfallsicherheit zu gewährleisten.
 Innerhalb ihres Papers gehen sie auf die Vor- und Nachteile des Containeransatzes ein.
 Ein klarer Vorteil sei die Möglichkeit des Multi-Cloud Modells, da Kubernetes unabhängig der jeweiligen Cloud Anbieter einsetzbar ist.
 und einen Standard implementieren.
 Isolationsmöglichkeiten zwischen den \emph{Tenants} habe einen hohen Anspruch für Sicherheit und Datenschutz.
-Ein weiterer Problemfall sei der hohe Aufwand zum Managment des Deployments der Anwendung.
+Ein weiterer Problemfall sei der hohe Aufwand zum Managment des Deployments\footnote{Bereitstellung} der Anwendung.
 Sie präsentieren eine Referenzarchitektur zum Erstellen von Container basierten Multi-Tenant SaaSs.
 Einen fehlenden Standard für Container Images bemängeln sie zum Zeitpunkt ihrer Veröffentlichung.
 Als weiteren Verbesserungspunkt stellen \citeauthor{Truyen2016} 3 Möglichkeiten zur Isolation von Tenants vor.
+Ein Einsatz des Kubernetes Operator Patterns, welche das Deployment der Anwendung an eine Komponente des \acf{SaaS} übergeben wird,
+wurde in diesem Falle nicht beachtet. Das Operator Pattern wurde 2016 von CoreOS vorgestellt, wodurch zum Erscheinungszeitpunkt
+des Papers dieses noch nicht vorhanden war.
 
 \paragraph{}
 Als weitere Möglichkeit zur Abstraktion von Softwaremanagment für Endnutzer entwickeln \citeauthor{Wieder2012} in ihrem Paper
