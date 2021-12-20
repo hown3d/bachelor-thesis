@@ -4,19 +4,23 @@
 \begin{otherlanguage}{ngerman}
 	\pdfbookmark[0]{Zusammenfassung}{Zusammenfassung}
 	\chapter*{Zusammenfassung}
-	Kurze Zusammenfassung des Inhaltes in deutscher Sprache von ca. einer Seite länge. Dabei sollte vor allem auf die folgenden Punkte eingegangen werden:
-	%
-	\begin{itemize}
-	  \item Motivation: Wieso ist diese Arbeit entstanden? Warum ist das Thema der Arbeit (für die Allgemeinheit) interessant? Dabei sollte die Motivation von der konkreten Aufgabenstellung, z.B. durch eine Firma, weitestgehend abstrahiert werden. 
-          \item Inhalt: Was ist Inhalt der Arbeit? Was genau wird in der Arbeit behandelt? Hier sollte kurz auf Methodik und Arbeitsweise eingegangen werden.
-          \item Ergebnisse: Was sind die Ergebnisse der Arbeit? Ein kurzer Überblick über die wichtigsten Ergebnisse als Teaser, um die Arbeit vollständig zu lesen.
-	\end{itemize}
-	\medskip
 
-	\noindent
-	Eine großartige Anleitung von Kent Beck, wie man gute Abstracts schreibt, finden Sie hier:
-	\begin{center}
-                \url{https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html}
-        \end{center}
+	Große public Cloud Anbieter wie AWS, Google und Microsoft haben es bei Datenschützern schwer:
+	Wie werden sensible Daten, wie es Chat Nachrichten sein können, DSGVO konform gespeichert.
+	Für dieses Problem wurde die Initiative Gaia-X gegründet, um einen europäischen Cloud Service anzubieten.
 
+
+	Gaia-X besitzt seit 2021 mit Plusserver Open Cloud, die erste Referenzcloud für die zukünfigte Gaia-X Architektur,
+	wobei aktuell nur Infrastrukturlösungen, wie \acp{VM}, Speicher und Netzwerk angeboten wird. 
+	Software Services, wie amerikanische Hyperscaler Clouds anbieten, sind aktuell noch nicht implementiert.
+	Deshalb soll in dieser Arbeit eine neue Referenzimplemntation für einen \ac{SaaS} Chat in einer Gaia-X kompatiblen Cloud erstellt werden.
+	Bei einem Software as a Service Prinzip soll der Endnutzer sich nicht um den Betrieb, Bereitstellung der Software
+	oder Skalierung der Anwendung kümmern müssen. Für den Endnutzer wird eine Schnittstelle bereitgestellt, worüber er einfach seinen Service erstellen kann.
+	Als Implementation des \ac{SaaS} wird eine containerbasierte Lösung angestrebt, welche mittels dem defacto Standard Framework für 
+	Containerorchestrierung Kubernetes betrieben wird. Vorteil dieses Ansatzes ist die einfache Skalierungsmöglichkeit, ein großes Ökosystem für Kubernetes
+	sowie Unabhängigkeit von Cloudanbietern, sodass diese Architektur auf jeder Infrastruktur zum Einsatz kommen kann.
+
+	Ein \ac{SaaS} für Gaia-X ist also schon heute möglich und kann damit zur Konkurrenz für etablierte amerikanische Cloudanbieter werden,
+	wobei dieses Ziel noch weit in der Zukunft liegt. Aktuell bietet Gaia-X eine \ac{IaaS} Struktur an, welche sich für den produktiven Einsatz
+	im Gegensatz zu AWS, Azure und Google Cloud nicht anbietet, wenn mehr als nur \acp{VM} benötigt werden.
 \end{otherlanguage}

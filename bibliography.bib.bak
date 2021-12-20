@@ -107,9 +107,29 @@
 @TechReport{BMWi2019,
   author      = {BMWi},
   institution = {Federal Ministry for Economic Affairs and Energy (BMWi)},
-  title       = {Project GAIA-X: A Federated Data Infrastructure as the Cradle of a Vibrant European Ecosystem},
+  title       = {Das Projekt GAIA-X: Eine vernetzte Dateninfrastruktur als Wiege eines vitalen, europäischen Ökosystems},
   year        = {2019},
+  address     = {Berlin},
   month       = oct,
+}
+
+@Book{Kane2018,
+  author    = {Kane, Sean P.},
+  publisher = {OREILLY MEDIA},
+  title     = {Docker: up & running},
+  year      = {2018},
+  place     = {Place of publication not identified},
+}
+
+@Article{7036275,
+  author  = {Bernstein, David},
+  journal = {IEEE Cloud Computing},
+  title   = {Containers and Cloud: From LXC to Docker to Kubernetes},
+  year    = {2014},
+  number  = {3},
+  pages   = {81-84},
+  volume  = {1},
+  doi     = {10.1109/MCC.2014.51},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

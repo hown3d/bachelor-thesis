@@ -6,17 +6,23 @@
 
 \begin{otherlanguage}{american}
 	\chapter*{Abstract}
-	A short summary of the contents in English of about one page. The following points should be addressed in particular:
-	\begin{itemize}
-		\item Motivation: Why did this work come about? Why is the topic of the work interesting (for the general public)? The motivation should be abstracted as far as possible from the specific tasks that may be given by a company.
-		\item Content: What is the content of this thesis? What exactly is covered in the thesis? The methodology and working method should be briefly discussed here.
-		\item Results: What are the results of this work? A brief overview of the most important results as a teaser to read the complete thesis.
-	\end{itemize}
-	\medskip
-	
-	\noindent
-	BTW: A great guide by Kent Beck how to write good abstracts can be found here:
-	\begin{center}
-		\url{https://plg.uwaterloo.ca/~migod/research/beckOOPSLA.html}
-	\end{center}
+	Large public cloud providers such as AWS, Google and Microsoft have a hard time with data protectionists:
+	How to store sensitive data, like chat messages, in a DSGVO compliant way.
+	For this problem, the initiative Gaia-X was founded to offer a European cloud service.
+
+
+	Gaia-X has had Plusserver Open Cloud since 2021, the first reference cloud for the future Gaia-X architecture,
+	currently only offering infrastructure solutions such as Virtual Machines, storage and network. 
+	Software services, like American hyperscaler clouds offer, are currently not implemented.
+	Therefore, in this thesis a reference implementation for a \ac{SaaS} chat in a Gaia-X compatible cloud will be created.
+	With a \ac{SaaS} principle, the end-user should not have to worry about the operation, deployment
+	or scaling of the application. An interface is provided for the end user, through which he can easily create his service. 
+	A container-based solution is used as the implementation of the \ac{SaaS}. which is backed by the defacto standard framework for 
+	container orchestration, Kubernetes. The advantage of this approach is the simple scalability, a large ecosystem behind Kubernetes
+	and the independence from cloud providers, so that this architecture can be used on any infrastructure.
+
+	A \ac{SaaS} for Gaia-X is therefore already possible today and can thus become competition for established American cloud providers,
+	although this goal is still far in the future. Currently, Gaia-X offers a \ac{IaaS} structure, which is not suitable for productive use
+	in contrast to AWS, Azure and Google Cloud, if more than just Virtual Machines is required.
+
 \end{otherlanguage}

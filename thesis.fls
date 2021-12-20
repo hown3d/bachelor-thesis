@@ -1726,11 +1726,7 @@ INPUT ./frontbackmatter/AbstractEN.tex
 INPUT frontbackmatter/AbstractEN.tex
 INPUT ./frontbackmatter/AbstractEN.tex
 INPUT frontbackmatter/AbstractEN.tex
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8t.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr9d.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr9d.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
@@ -1746,8 +1742,10 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/mathpazo/zplmr7t.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/public/bera/fvmr8t.vf
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8r.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/palatino/pplr9d.vf
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
 INPUT ./frontbackmatter/AbstractDE.tex
 INPUT ./frontbackmatter/AbstractDE.tex
 INPUT ./frontbackmatter/AbstractDE.tex
@@ -1833,8 +1831,6 @@ INPUT frontbackmatter/Acronyms.tex
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplrc9d.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplrc9d.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/palatino/pplrc9d.vf
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr9d.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr9d.tfm
@@ -1874,7 +1870,10 @@ INPUT chapters/1_einleitung/0_einleitung.tex
 INPUT ./chapters/1_einleitung/0_einleitung.tex
 INPUT chapters/1_einleitung/0_einleitung.tex
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr9d.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr9d.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8t.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr9t.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/mathpazo/zplmr7m.tfm
@@ -1887,8 +1886,6 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/palatino/pplr9d.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/palatino/pplr9d.vf
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/public/bera/fvmr8t.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8r.tfm
 INPUT ./chapters/1_einleitung/motivation.tex
@@ -2049,6 +2046,9 @@ INPUT ./chapters/6_fazit_ausblick/related_work.tex
 INPUT chapters/6_fazit_ausblick/related_work.tex
 INPUT ./chapters/6_fazit_ausblick/related_work.tex
 INPUT chapters/6_fazit_ausblick/related_work.tex
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8t.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/public/bera/fvmr8t.vf
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/bera/fvmr8r.tfm
 INPUT ./chapters/6_fazit_ausblick/fazit.tex
 INPUT ./chapters/6_fazit_ausblick/fazit.tex
 INPUT ./chapters/6_fazit_ausblick/fazit.tex
