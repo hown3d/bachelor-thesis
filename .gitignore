@@ -10,3 +10,7 @@ thesis.pdf
 thesis.run.xml
 thesis.toc
 thesis-blx.bib
+thesis.fdb_latexmk
+thesis.fls
+thesis.synctex.gz
+bibliography.bib.*
