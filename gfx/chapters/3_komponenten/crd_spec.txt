@@ -1,0 +1,39 @@
+KIND:     Rocket
+VERSION:  chat.accso.de/v1alpha1
+
+RESOURCE: spec <Object>
+
+DESCRIPTION:
+     RocketSpec defines the desired state of Rocket
+
+FIELDS:
+   adminSpec	<Object>
+      email	<string>
+      username	<string>
+   database	<Object>
+      replicas	<integer>
+      storageSpec	<Object>
+         # embedded Persistent Volume Claim
+         ... 
+         spec	<Object>
+            accessModes	<[]string>
+            dataSource	<Object>
+               ...
+            dataSourceRef	<Object>
+               ...
+            resources	<Object>
+               limits	<map[string]>
+               requests	<map[string]>
+            selector	<Object>
+               ... 
+            storageClassName	<string>
+            volumeMode	<string>
+            volumeName	<string>
+         status	<Object>
+            ...
+      version  <string>
+   ingressSpec	<Object>
+      annotations	<map[string]string>
+      host	<string>
+   replicas	<integer>
+   version	<string>

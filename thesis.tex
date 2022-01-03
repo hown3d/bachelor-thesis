@@ -94,27 +94,30 @@
 \part{Thesis}\label{pt:thesis}
 
 \include{chapters/1_einleitung/0_einleitung}
-\include{chapters/1_einleitung/motivation}
+\input{chapters/1_einleitung/motivation}
 \include{chapters/2_grundlagen/0_grundlagen}
-\include{chapters/2_grundlagen/container}
-\include{chapters/2_grundlagen/kubernetes}
-\include{chapters/2_grundlagen/gaia-x}
-\include{chapters/2_grundlagen/saas}
+\input{chapters/2_grundlagen/container}
+\input{chapters/2_grundlagen/kubernetes/kubernetes}
+\input{chapters/2_grundlagen/kubernetes/ressourcen}
+\input{chapters/2_grundlagen/gaia-x}
+\input{chapters/2_grundlagen/saas}
 \include{chapters/3_komponenten/0_komponenten}
-\include{chapters/3_komponenten/architektur}
-\include{chapters/3_komponenten/operator}
-\include{chapters/3_komponenten/rocket-api-service}
-\include{chapters/3_komponenten/tenant-service}
-\include{chapters/3_komponenten/clients}
+\input{chapters/3_komponenten/architektur}
+\input{chapters/3_komponenten/operator}
+\input{chapters/3_komponenten/externe_apps}
+\input{chapters/3_komponenten/rocket-api-service}
+\input{chapters/3_komponenten/tenant-service}
+\input{chapters/3_komponenten/clients}
 \include{chapters/4_SLAs/0_slas}
-\include{chapters/4_SLAs/datenschutz}
-\include{chapters/4_SLAs/monitoring}
-\include{chapters/4_SLAs/verfuegbarkeit}
+\input{chapters/4_SLAs/datenschutz}
+\input{chapters/4_SLAs/monitoring}
+\input{chapters/4_SLAs/verfuegbarkeit}
 \include{chapters/5_gaia-x_einbettung/0_gaia-x}
+\input{chapters/5_gaia-x_einbettung/scs}
 \include{chapters/6_fazit_ausblick/0_fazit_ausblick}
-\include{chapters/6_fazit_ausblick/related_work}
-\include{chapters/6_fazit_ausblick/fazit}
-\include{chapters/6_fazit_ausblick/ausblick}
+\input{chapters/6_fazit_ausblick/related_work}
+\input{chapters/6_fazit_ausblick/fazit}
+\input{chapters/6_fazit_ausblick/ausblick}
 
 %*************************************************************************
 % Recommendations
@@ -128,6 +131,7 @@
 %\renewcommand{\thechapter}{\alph{chapter}}
 \cleardoublepage
 \part{Appendix}
+\include{chapters/appendix/appendix}
 %*************************************************************************
 % Other Stuff in the Back
 %*************************************************************************
