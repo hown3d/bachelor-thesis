@@ -1,0 +1,32 @@
+\chapter{Einbettung in Gaia-X kompatible Cloud}
+\label{chapter:gaia-x-einbettung}
+Als einer der ersten Testimplementationen für Gaia-X gilt die Pluscloud Open.
+Dabei wurde zum Zweck dieser Arbeit eine zeitlich begrenzte Testlizenz bereitgestellt, 
+welche die Möglichkeit bat, diese Referenzimplementation eines \ac{SaaS} in Gaia-X zu testen.
+
+
+\section{Erstellung der Testinfrastruktur}
+\label{sec:erstellung-testinfra}
+Hierbei kam es allerdings zu einigen Einschränkungen im Vergleich zu bereits etablierten Clouds, 
+wie \ac{AWS}, Azure \dots, da zum Zeitpunkt der Thesis nur Infrastruktur Services wie Netzwerke, DNS, \acp{VM} und Speicher 
+zur Verfügung stehen und kein Managed Kubernetes Service. Um dennoch ein Kubernetes Cluster zu erstellen,
+wurde das Tool \textbf{Kubespray}\footnote{\href{https://github.com/kubernetes-sigs/kubespray}{Kubespray}} genutzt,
+welches mit Hilfe Red Hats Konfiugrationssoftware \textbf{Ansible} und Hashicorps \textbf{Terraform} \acp{VM}, Netzwerk und Sicherheitsgruppen
+für die Kubernetes Knoten erstellt. Dadurch war es relativ einfach, ein Cluster für Testzwecke zu erstellen.
+
+Aufgrund der zeitlichen Begrenzung von 30 Tagen der Testlizenz, wurde jedoch noch eine lokal 
+testbare Version der Openstack Services erstellt, welche Plusserver nutzt.
+Hierbei werden alle benötigen Services in Containern bereitgestellt, welche auf der Entwicklungs-
+plattform betrieben werden können. 
+Somit kann die Cloudunabhängigkeit von Kubernetes zum Vorteil für Entwickler genutzt werden.
+
+
+\section{Zukünfigtige Bereitstellung im Gaia-X Katalog}
+\label{sec:erstellung-testinfra}
+Gaia-X definiert als Standard einen sogenannten Katalog, in dem Services registriert werden können und Endnutzer
+mittels eines Suchalogrithmuses einen Service für ihre Bedürfnisse finden können. 
+Im Katalog bereitgestellte Services müssen den Nutzer informieren, welche Eigenschaften der jeweilige Service besitzt.
+Dadurch können Endnutzer auswählen, welche Services in welcher Region und zu welchen Umständen sie nutzen möchten.
+Dieses Prinzip wird in Gaia-X \emph{Self-Description} genannt. \cite{Eggers2020}
+
+Zum Zeitpunkt der Thesis ist dieser Katalog jedoch rein theoretisch, sodass noch keine Beispiele für diesen Katalog existieren.

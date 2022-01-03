@@ -1,2 +1,14 @@
 \section{Tenant Service}
 \label{sec:komponenten:tenant-service}
+Zur Konfiguration des Tenants im Clustern, wurde der Tenant Service als Referenzimplementation erstellt. Hierbei
+wird ebenfalls das gRPC Framework verwendet, um eine konistente API zu ermöglichen. Im Fall des Tenant Service
+besitzt die API nur einen \emph{Register} Endpoint. Dieser stellt sicher, dass für den gewünschten Nutzer 
+Kubernetes Roles und Rolebindings, ein Cert-Manager Issuer, sowie Resource Quotas angelegt wird. 
+Da Rollen an einen Namespace gebunden sind, erhält jeder Tenant einen eigenen Namespace, um sicherzustellen,
+dass andere Nutzer keinen Zugriff auf die Ressourcen einer anderen Partei erlangen.
+Diese werden vom Rocket API Service genutzt, um die entsprechenden Rocket \acp{CR} zu managen. 
+Im Gegensatz zum Rocket API Service, verwendet der Tenant Service nicht das Prinzip der Identitätsübernahme.
+Der Tenant Service läuft neben Operator und Rocket API Service im Kubernetes Cluster, stellt allerdings seine
+Anfragen an die Kubernetes API mit Hilfe eines Service Accounts. Dieser Service Account besitzt die selben Rechte,
+wie die erstellten User Rollen, da Kubernetes nicht erlaubt, Rechte zu vergeben, wenn die anfragende Identität
+diese nicht besitzt.

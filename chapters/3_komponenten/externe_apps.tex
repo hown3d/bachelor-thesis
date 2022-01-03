@@ -10,11 +10,11 @@ Hierzu werden die folgenden Kubernetes nativen Anwendungen genutzt:
   \item Cert-Manager
 \end{itemize}
 
-Zudem kommen mit dem Nutzen der Gaia-X Cloud, welche auf OpenStack basiert, der Service \emph{Designate}
-für die DNS Konfiguration ins Spiel. Designate und die Kubernetes Anwendung \emph{ExternalDNS} werden miteinander
+Zudem kommen mit dem Nutzen der Gaia-X Cloud, welche auf OpenStack basiert, der Service \textbf{Designate}
+für die DNS Konfiguration ins Spiel. Designate und die Kubernetes Anwendung \textbf{ExternalDNS} werden miteinander
 verwendet, um für neue Ingress Ressourcen automatisch DNS Einträge zu erstellen. 
 
-Der Nginx Ingress Controller dient als Reverse Proxy für alle Ingress Ressourcen innerhalb des Clusters.
+Der \textbf{Nginx Ingress Controller} dient als Reverse Proxy für alle Ingress Ressourcen innerhalb des Clusters.
 Mithilfe des in \ref{sec:komponenten:operator} genannten Synchronisationsmechanismus wird der Nginx Webserver so 
 konfiguriert, dass mittels Host Headern die jeweilig richtige Route zu den Containern hergestellt wird. 
 Da der Nginx Controller als Proxy dient, muss zudem nur eine Externe IP für alle Chat Services genutzt werden, was

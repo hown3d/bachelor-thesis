@@ -8,8 +8,9 @@ Anfragen an die API werden mittels OAuth2 Middleware überprüft, um Authentifiz
 dass jeder Nutzer nur auf seine eigenen Services zugreifen kann, werden alle Anfragen an die Kubernetes API als der
 Nutzer selbst gestellt. Dies wird durch die Verbindung von Kubernetes, Keycloak und dem Rocket API-Service möglich.
 Jeder Client implementiert das OpenID Connect Protokoll, um den Nutzer an der Authentifizierungsstelle, dem Keycloak
-Server, anzumelden. Das erhaltene OpenID Token wird als HTTP Header in jeder Anfrage an den Rocket API-Service 
-mitgeliefert. Dargestellt ist dieser Ablauf in \ref{fig:rocket-api-service-flow}.
+Server, anzumelden. Sobald der Client das erhaltene OpenID Token von Keycloak zurück bekommt,
+wird es als HTTP Header in jeder Anfrage an den Rocket API-Service mitgeliefert.
+Dargestellt ist der beschriebene Ablauf in \ref{fig:rocket-api-service-flow}.
 
 \begin{figure}[h]
   \centering
@@ -17,3 +18,6 @@ mitgeliefert. Dargestellt ist dieser Ablauf in \ref{fig:rocket-api-service-flow}
   \caption{Ablauf des Rocket API-Services}
   \label{fig:rocket-api-service-flow}
 \end{figure}
+
+Durch das Auslagern von CRUD Operationen und Tenant Operationen \ref{sec:komponenten:tenant-service} in
+verschiedene Services, kann eine unabhängige Entwicklung der beiden Services stattfinden.
