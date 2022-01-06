@@ -202,7 +202,7 @@
   year   = {2009},
 }
 
-@TechReport{,
+@TechReport{GXFS2021,
   institution = {Federal Ministry for Economic Affairs and Energy},
   title       = {Gaia-X Federation Services (GXFS)},
   year        = {2021},

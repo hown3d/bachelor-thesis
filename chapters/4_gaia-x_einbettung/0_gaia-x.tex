@@ -1,8 +1,15 @@
 \chapter{Einbettung in Gaia-X kompatible Cloud}
 \label{chapter:gaia-x-einbettung}
-Als einer der ersten Testimplementationen für Gaia-X gilt die Pluscloud Open.
-Dabei wurde zum Zweck dieser Arbeit eine zeitlich begrenzte Testlizenz bereitgestellt, 
-welche die Möglichkeit bat, diese Referenzimplementation eines \ac{SaaS} in Gaia-X zu testen.
+Gaia-X ermöglicht und fördert die Bildung von sogenannten \emph{Federations}. 
+Federations werden als eingeständige Ökosysteme beschrieben, in denen sich einzelne Teilnehmer zusammenschließen könnnen,
+um Services innerhalb oder auch außerhalb der Federation anzubieten, um Teilnehmern einen Mehrwert zu bieten.
+Gaia-X operiert nicht, wie alleinstehenden Cloud-Providerfirmen, selbst auf dem Markt, sondern erstellt 
+Software Komponenten zur Erstellung eines förderalisierten Systems in dem mehrere Teilnehmer 
+untereinander kommunizieren und interagieren können \cite{GXFS2021}.
+Als einer der ersten Testimplementationen für Gaia-X gilt die Pluscloud Open, 
+welche auf Basis des Open Source Projekts \ac{SCS} läuft.
+Zum Zweck dieser Arbeit wurde eine zeitlich begrenzte Testlizenz bereitgestellt, 
+welche die Möglichkeit bietet, die in dieser Arbeit erstellte Referenzimplementation eines \ac{SaaS} \ref{sec:gaia-x-einbettung:scs} in Gaia-X zu testen.
 
 
 \section{Erstellung der Testinfrastruktur}
@@ -10,8 +17,8 @@ welche die Möglichkeit bat, diese Referenzimplementation eines \ac{SaaS} in Gai
 Bei der Erstellung der Testinfrastruktur kam es zu einigen Einschränkungen im Vergleich zu bereits etablierten Clouds, 
 wie \ac{AWS}, Azure \dots, da zum Zeitpunkt der Thesis nur Infrastruktur Services wie Netzwerke, DNS, \acp{VM} und Speicher 
 zur Verfügung stehen und kein Managed Kubernetes Service.
-Durch die unterliegende Architektur des Gaia-X Providers, welche auf dem \ac{SCS} \ref{sec:gaia-x-einbettung:scs} basiert,
-konnten bereits etablierte freie Software im Cloud Umfeld genutzt werden, um die Bereitstellung eines Clusters zu ermöglichen.
+Durch die unterliegende Architektur des Gaia-X Providers kann bereits etablierte freie Software
+im Cloud Umfeld genutzt werden, um die Bereitstellung eines Clusters zu ermöglichen.
 Hierbei wurde das Tool \textbf{Kubespray}\footnote{\href{https://github.com/kubernetes-sigs/kubespray}{Kubespray}} genutzt,
 welches mit Hilfe der Konfigurationssoftware \textbf{Ansible} und dem \ac{IaC} Tool \textbf{Terraform} 
 \acp{VM}, Netzwerk und Sicherheitsgruppen für die Kubernetes Knoten erstellt. 
@@ -25,8 +32,8 @@ Somit kann die Cloudunabhängigkeit von Kubernetes zum Vorteil für Entwickler g
 
 \section{Bereitstellung im Gaia-X Katalog}
 \label{sec:gaia-x-einbettung:gaia-x-katalog}
-Gaia-X definiert als Standard einen sogenannten Katalog, in dem Services registriert werden können und Endnutzer
-mittels eines Suchalogrithmuses einen Service für ihre Bedürfnisse finden können. 
+Gaia-X definiert als Standard einen sogenannten Katalog, in dem Federations Services registrieren können 
+und Endnutzer mittels Suchalogrithmen einen Service für ihre Bedürfnisse finden können. 
 Im Katalog bereitgestellte Services müssen den Nutzer informieren, welche Eigenschaften der jeweilige Service besitzt.
 Dadurch können Endnutzer auswählen, welche Services in welcher Region und zu welchen Umständen sie nutzen möchten.
 Dieses Prinzip wird in Gaia-X \emph{Self-Description} genannt. Self-Descriptions werden mittels JSON-LD dargestellt, ein
