@@ -17,6 +17,8 @@ Als technologischer Standpunkt dient \ref{fig:scs_architecture}, welches die gep
 Grundlage des Stacks sind OpenStack Services, welche als OpenSource Projekt für Cloud-Computing Architektur entwickelt wurde.
 Unterteilt wird dies in 3 grundlegende Bausteine: \textbf{Compute}, \textbf{Network} und \textbf{Storage},
 welche als \ac{IaaS} Services definiert sind.
+Die Openstack Services sollen als starke, multitenant fähige Basis für Kubernetes Cluster dienen. 
+Der Hauptdienst soll Kubernetes as a Service darstellen, auf dem Provider intern ihre \ac{SaaS} aufbauen können \cite{scs}.
 Darauf aufbauend wird ein Container Layer erstellt, welcher mit Hilfe von Containerruntimes
 wie Docker oder Podman\footnote{\href{https://podman.io}{Podman}} gesteuert werden soll \cite{scs}.
 
