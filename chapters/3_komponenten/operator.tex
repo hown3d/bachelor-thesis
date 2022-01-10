@@ -12,8 +12,9 @@ Eigene Typen beziehungsweise \acp{CR} werden mittels einer \ac{CRD} erweitert.
 \end{figure}
 
 In \ref{fig:kubernetes_operator_example} wird dargestellt, wie ein Kubernetes Operator funktioniert. Der Operator läuft im Cluster und
-überwacht den API-Server auf Änderungen seiner \ac{CR} und ergreift auf Grundlage des Zustands der Ressource Maßnahmen im Cluster, 
-wie beispielsweise das Erstellen neuer Pods.\cite{Dobies2020}
+überwacht den API-Server auf Änderungen seiner \ac{CR} Objekte. 
+Auf Grundlage des Zustands der Objekte im Cluster ergreift er erforderliche Maßnahmen zum erfüllen des gewünschten Zustands, 
+wie beispielsweise das Erstellen neuer Pods \cite{Dobies2020}.
 Diesen Synchronisationsmechanismus nennt man \emph{Reconciliation}.
 
 Der Operator für die Referenzimplementation des Chat \ac{SaaS} nutzt diesen Synchronisationsmechanismus, um die Erstellung des RocketChat
@@ -22,7 +23,7 @@ das Deployment. Operatoren können sich zusätzlich zum Deployment und der Konfi
 und automatische Reperatur des Services kümmern\cite{Dobies2020}, welche allerdings in dieser Referenzimplementation 
 nicht berücksichtigt wurden.
 
-Rocket.Chat besteht im Deployment aus einer MongoDB\footnote{\href{https://www.mongodb.com/}{MongoDB}}, welche als Replicaset konfiguriert wird,
+RocketChat Anwendungen bestehen aus einer MongoDB, welche als Replicaset konfiguriert wird,
 sowie dem eigentlichen Webserver, welcher als Endpunkt für Clients dient.
 
 Die Bereitstellung des Chat Services besteht aus den folgenden Kubernetes Ressourcen \ref{subsec:kubernetes:ressourcen}:
@@ -37,12 +38,8 @@ Die Bereitstellung des Chat Services besteht aus den folgenden Kubernetes Ressou
   \item ServiceAccount
 \end{itemize} 
 
-Hierbei werden Änderungen an dem erstellten Rocket \ac{CR} von der Kubernetes API an den Operator weitergegeben, um
-notwendige Anpassungen an das Deployment zu machen, beispielsweise falls sich eine Containerimageversion ändert 
-oder die Ressource gelöscht wird. 
-
 \subsection{Rocket Custom Resource}
-Als API für den Operator dient die Rocket Chat \ac{CRD}. Diese wird im Code als Go Struct definiert, welches letztendlich
+Als API für den Operator dient die Rocket \ac{CRD}. Diese wird im Code als Go Struct definiert, welches letztendlich
 als JSON\footnote{\href{https://www.json.org/json-de.html}{JSON}} Objekt an die Kubernetes API gesendet wird.
 Genauer dargestellt wird die Ressource in \ref{chap:rocketchat_crd_spec}, in dem aufgezeigt wird, wie das Objekt aufgebaut ist.
 Nutzer des Kubernetes Cluster können selbst solche Rocket \acp{CR} via YAML oder JSON Dateien erstellen und

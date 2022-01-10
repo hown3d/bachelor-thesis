@@ -1,7 +1,7 @@
 \section{Tenant Service}
 \label{sec:komponenten:tenant-service}
-Zur Konfiguration des Tenants im Clustern, wurde der Tenant Service als Referenzimplementation erstellt. Hierbei
-wird das gRPC Framework verwendet, um eine konistente API zu ermöglichen. Im Fall des Tenant Service
+Zur Konfiguration des Tenants im Cluster, wurde der Tenant Service zur Verwaltung von Nutzerkonfiguration im Cluster erstellt.
+Hierbei wird das gRPC Framework verwendet, um eine konistente API zu ermöglichen. Im Fall des Tenant Service
 besitzt die API nur einen \emph{Register} Endpoint. Dieser stellt sicher, dass für den gewünschten Nutzer 
 Kubernetes Roles und Rolebindings, ein Cert-Manager Issuer, sowie Resource Quotas angelegt wird. 
 Da Rollen an einen Namespace gebunden sind, erhält jeder Tenant einen eigenen Namespace, um sicherzustellen,

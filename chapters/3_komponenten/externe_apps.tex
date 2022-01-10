@@ -2,7 +2,7 @@
 \label{sec:komponenten:externe-apps}
 
 Um den Chat Service nun effektiv zu betreiben, werden zusätzliche Open Source Anwendungen zu Nutzen gezogen,
-damit die Bereitstellung des Chats für den Endnutzer deutlich vereinfacht und der Betrieb leichter gestaltet wird.
+um die Bereitstellung der Rocket Anwendung für den Endnutzer deutlich zu vereinfachen und den Betrieb leichter zu gestalten.
 Hierzu werden die folgenden Kubernetes nativen Anwendungen genutzt:
 \begin{itemize}
   \item ExternalDNS
@@ -11,20 +11,21 @@ Hierzu werden die folgenden Kubernetes nativen Anwendungen genutzt:
 \end{itemize}
 
 Zudem kommen mit dem Nutzen der Gaia-X Cloud, welche auf OpenStack basiert, der Service \textbf{Designate}
-für die DNS Konfiguration ins Spiel. Designate und die Kubernetes Anwendung \textbf{ExternalDNS} werden miteinander
+für die DNS Konfiguration und \textbf{Cinder} als Storage Service dazu. 
+Designate und die Kubernetes Anwendung \textbf{ExternalDNS} werden miteinander
 verwendet, um für neue Ingress Ressourcen automatisch DNS Einträge zu erstellen. 
 
 Der \textbf{Nginx Ingress Controller} dient als Reverse Proxy für alle Ingress Ressourcen innerhalb des Clusters.
 Mithilfe des in \ref{sec:komponenten:operator} genannten Synchronisationsmechanismus wird der Nginx Webserver so 
-konfiguriert, dass mittels Host Headern die jeweilig richtige Route zu den Containern hergestellt wird. 
+konfiguriert, sodass mittels Host Headern in Anfragen an den Server die jeweils richtige Route zu den Containern hergestellt wird. 
 Da der Controller als Proxy dient, muss zudem nur eine Externe IP für alle Chat Services genutzt werden, was
-für Kostenersparnissen in der Cloud führt. Die DNS Einträge für alle Rocket Instanzen werden durch die Nutzung 
+zu Kostenersparnissen in der Cloud führt. Die DNS Einträge für alle Chat Instanzen werden durch die Nutzung 
 von ExternalDNS auch automatisch an die IP des Loadbalancers für den Nginx Controller angepasst.
 
 Um Zertifikate für HTTPS Verbindungen zu nutzen, wird die von JetStack entwickelte Anwendung Cert-Manager genutzt,
 welche die Erstellung von SSL Zertifikaten für Ingress Ressourcen vereinfacht. Hierbei wird eine \emph{Issuer} Ressource
-erstellt, welche als Zertizierungsstelle dient.\cite{CertManager2021} Hierbei gibt es mehrere unterstützte Typen, wobei sich
-für die Referenzimplementation zunächst für Selbstsignierte Zertifikate entschieden wurde. 
+erstellt, welche als Zertizierungsstelle dient.\cite{CertManager2021} Hierbei gibt es mehrere unterstützte Typen, 
+wobei für die Referenzimplementation die Entscheidung zunächst auf selbstsignierte Zertifikate gefallen ist.
 Eine Umstellung auf ACME\footnote{Automated Certificate Managment Environment},
 wie beispielsweise \href{https://letsencrypt.org/de/}{Let's Encrypt}, welche kostenlose SSL Zerifikate anbieten,
 ist jederzeit möglich. 
@@ -32,13 +33,15 @@ Beim Erstellen einer Ingress Ressource wird die Annotation \texttt{cert-manager.
 auf welche die Cert-Manager Anwendung ein Zertifikat am Issuer erstellt. 
 Das in der Ingress Ressource referenzierte TLS Secret wird daraufhin vom Cert-Manager für das Zertifikat genutzt.
 
-\subsection{Identität- und Zugriffsmanagment}
+\subsection{Identität- und Zugriffsmanagement}
 Kubernetes besitzt mit dem \ac{RBAC} System eine Möglichkeit innerhalb des Clusters Zugriffsrechte auf Ressourcen
 zu verwalten. In dieser Referenzimplementation soll nun ein außerhalb stehender Dienst für das Identitätsmanagment
 zuständig sein. Hierbei wurde auf Basis der \ac{SCS} Architektur \emph{Keycloak} als OpenID Connect Provider gewählt.
 OpenID Connect ist eine Schicht überhalb des OAuth Frameworks, welches Clients die Möglichkeit bietet, Endnutzer
-an einer Authentifizierungsstelle zu verifizieren und Informationen über diese zu erhalten.\cite{OpenID2021}
+an einer Authentifizierungsstelle zu verifizieren und Informationen über diese zu erhalten \cite{OpenID2021}.
+
+
 Kubernetes unterstützt ebenfalls das OpenID Connect Protokoll, indem Optionen für die OpenID Connect Authentifizierungsstelle
 übergeben werden. Dadurch ist es für den Endnutzer möglich, sich mittels eines \emph{OpenID Connect Tokens} am 
-Kubernetes API Server zu authentifizieren. Wie dieses Prinzip für den Chat Service genutzt wird, wird 
+Kubernetes API Server zu authentifizieren. Die Nutzung dieses Prinzip für den Chat Service wird 
 in \ref{sec:komponenten:rocket-api-service} und \ref{sec:komponenten:tenant-service} näher erläutert.

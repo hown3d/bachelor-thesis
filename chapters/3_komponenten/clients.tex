@@ -1,9 +1,9 @@
 \section{Clients}
 \label{sec:komponenten:clients}
 
-Clients dienen als Schnittstelle zwischen Endnutzer und den jeweiligen Service APIs. 
-\ref{sec:komponenten:tenant-service} \ref{sec:komponenten:rocket-api-service}
-Hierfür wurde als Referenzimplementation ein \ac{CLI} Tool erstellt, welches alle API Endpunkte der Services
+Clients dienen als Schnittstelle zwischen Endnutzer und den jeweiligen Service APIs, welche in 
+\ref{sec:komponenten:tenant-service} \ref{sec:komponenten:rocket-api-service} definiert wurden.
+Hierfür wurde ein \ac{CLI} Tool erstellt, welches alle API Endpunkte der Services
 unterstützt. Zudem besitzt das CLI Tool einen Mechanismus, um OpenID Tokens vom Keycloak Server anzufragen.
 Hierbei wird ein minimaler HTTP Server zur Laufzeit erstellt, welcher als \emph{Callback} für den Keycloak Server dient.
 Sobald ein Nutzer sich über den Browser in Keycloak anmeldet, wird er auf den Callbackendpunkt des HTTP Servers

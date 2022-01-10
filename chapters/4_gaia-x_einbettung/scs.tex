@@ -5,7 +5,7 @@
   \centering
   \includegraphics[height=0.71\textwidth]{gfx/chapters/4_gaia-X/scs_architecture.png}
   \caption{Architektur und Komponenten des Sovereign Cloud Stacks}
-  \source{https://scs.community/assets/images/201001-SCS-4a.png}
+  \source{\cite{scs}}
   \label{fig:scs_architecture}
 \end{figure}
 
@@ -14,8 +14,8 @@ existierenden und zukünfitgen Cloudprovidern genutzt werden soll.
 Ziel des Stacks ist ein Netzwerk von Anbietern, welche durch Nutzung von freier Software und gemeinsamer Standards,
 eine interoperable, unabhängige Cloud schaffen \cite{Kagermann2021}.
 Als technologischer Standpunkt dient \ref{fig:scs_architecture}, welches die geplante Architektur des \ac{SCS} zeigt. 
-Grundlage des Stacks sind OpenStack Services, welche als OpenSource Projekt für Cloud-Computing Architektur entwickelt wurde.
-Unterteilt wird dies in 3 grundlegende Bausteine: \textbf{Compute}, \textbf{Network} und \textbf{Storage},
+Grundlage des Stacks sind OpenStack Services, welche als OpenSource Projekt für Cloud-Computing Architekturen entwickelt wurden.
+Unterteilt wird dies in drei grundlegende Bausteine: \textbf{Compute}, \textbf{Network} und \textbf{Storage},
 welche als \ac{IaaS} Services definiert sind.
 Die Openstack Services sollen als starke, multitenant fähige Basis für Kubernetes Cluster dienen. 
 Der Hauptdienst soll Kubernetes as a Service darstellen, auf dem Provider intern ihre \ac{SaaS} aufbauen können \cite{scs}.
@@ -25,5 +25,5 @@ Podman\footnote{Daemonlose Containerlaufzeitumgebung zur Verwaltung, Erstellung 
 gesteuert werden soll \cite{scs}.
 
 Services wie der in dieser Thesis entwickelte Chat \ac{SaaS} finden sich auf der übergeordneten Ebene \textbf{SCS Platform Services} wieder.
-Für die Entwicklung des Rocket Chat \ac{SaaS} wurde diese Architektur als Grundbild genutzt, indem 
+Für die Entwicklung des RocketChat \ac{SaaS} wurde diese Architektur als Grundbild genutzt, indem 
 genannte Technologien des Stacks in der Implementierung berücksichtigt wurden.

@@ -1,19 +1,19 @@
 \chapter{Einleitung}
 \label{chap:einleitung}
 
-Moderne container-basierte Anwendungsplattformen vereinfachen das Managment und die Entwicklung
+Moderne container-basierte Anwendungsplattformen vereinfachen das Management und die Entwicklung
 von Software. Kubernetes \cite{kubernetes} ist eine Open Source Containerorchestrierungsplattform und gilt im
-Cloud Native Umfeld als defacto Standard API für den Betrieb von Cloud-native Anwendungen.
+Cloud Native Umfeld als defacto Standard API für den Betrieb von Cloud-native Anwendungen \cite{Burns2019}.
 Es bietet die Möglichkeit, skalierbare und verteilte Systeme zu erstellen und zu warten \cite{Burns2019}.
-Mithilfe von Kubernetes Operatoren, einem Pattern, welches von CoreOS\footnote{\url{https://coreos.com}} entwickelt,
-ist es möglich, die Kubernetes API mit eigenen Ressourcen zu erweitern.
+Kubernetes Operatoren bieten die Möglichkeit die Kubernetes API durch eigene Ressourcen zu erweitern. 
+Es wurde von CoreOS\footnote{\url{https://coreos.com}} entwickelt.
 Das Projekt \emph{Gaia-X} wurde als Basis für eine föderale, offene Dateninfrastruktur auf der Grundlage europäischer Werte gegründet.
-Als Hauptziel gilt die digitale Souveränität, innerhalb der Plattform sollen Daten sicher gesammelt und verteilt werden können.
-Die europäische Cloud soll als vernetzte europäische Alternative zu etablierten \emph{Hyperscaler Clouds}, wie Amazons \ac{AWS},
-Microsoft Azure und Googles \ac{GCP}. Ziel ist eine homogenen und standartisierten Dateninfrastruktur für europäische Cloudanbieter.
-Das Konzept für die Gaia-X Cloud ist ein vernetztes Knotenprinzip, indem über eine Selbstbeschreibung der Knoten
-Tranzparenz über Ort der Datenspeicherung und der verwendenten Technologie bietet. Um an dem Projekt als Cloudanbieter
-teilnehmen zu können, muss ein gewisser Standard sowie die Erfüllung von Regeln durch eine Zertifizierung nachgewiesen werden.\cite{BMWi2019}
+Als Hauptziel gilt die digitale Souveränität. Innerhalb der Plattform sollen Daten sicher gesammelt und verteilt werden.
+Die europäische Cloud soll als vernetzte europäische Alternative zu etablierten \emph{Hyperscaler Clouds}, wie \ac{AWS},
+Microsoft Azure und \ac{GCP}. Ziel ist eine homogene und standardisierte Dateninfrastruktur für europäische Cloudanbieter.
+Das Konzept der Gaia-X Cloud ist ein vernetztes Knotenprinzip, in dem Transparenz mittels einer Selbstbeschreibung der Services
+über Ort der Datenspeicherung und der verwendenten Technologie geboten wird.
+Die Teilnahme von Cloudanbietern an dem Projekt erfordert ein gewisser Standard, sowie die Erfüllung von Regeln durch eine Zertifizerung \cite{BMWi2019}.
 
 \paragraph{}
 Diese Arbeit soll eine Referenzimplementation für einen \emph{Multi-Tenant}\footnote{Teilen eines Systems mit anderen Nutzern, welche spezifische Privilegien innerhalb des Systems besitzen}
