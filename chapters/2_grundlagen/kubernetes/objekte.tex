@@ -1,0 +1,15 @@
+\subsection{Objekte}
+\label{sec:kubernetes:objekte}
+In Kubernetes sind Objekte persistente Entitäten des Systems. 
+Das System nutzt diese Entitäten um den Status des Clusters zur repräsentieren.
+
+Objekte können die folgenden Dinge beschreiben:
+\begin{itemize}
+  \item Welche containerisierten Applikationen laufen auf welchen Knoten im Cluster
+  \item Ressourcen die für die Applikationen vorhanden sind
+  \item Richtlinien, wie sich die Anwendungen verhalten soll, beispielsweise Ausfallsicherheit, Updates und Neustarts
+\end{itemize}
+
+Sobald ein Objekt im Cluster erstellt wird, arbeitet Kubernetes daran, das die gewünschte Konfiguration des Objekts
+im Cluster vorhanden ist. 
+Effektiv bedeutet die Erstellung eines Objekts im Cluster die Definition der Workload, dem gewünschte Zustand des Clusters \cite{KuberneteObjects_2021}.

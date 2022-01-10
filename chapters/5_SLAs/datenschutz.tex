@@ -9,3 +9,28 @@ zur \emph{Integrität und Vertraulichkeit der Datenverarbeitung} \cite{Weichert2
 
 Gaia-X definiert ein Compliance Framework, welches Regeln für Datenschutz aller Services definiert, an die sich
 Anbieter halten müssen \cite{}. 
+
+
+\subsection{Persistenz von Daten}
+\label{subsec:datenschutz:persistenz}
+Innerhalb des Kubernetes Clusters werden alle Chatnachrichten innerhalb der vom Operator bereitgestellten
+MongoDB gespeichert. Im Kubernetes Cluster sind alle Pods der MongoDB Container mithilfe eines StatefulSets 
+erstellt. Zur Persistenz wird das vom StatefulSet verwendet PersistVolume genutzt,
+welches als Abstraktion für Speicherimplementierungen für Kubernetes dient.
+Als Implementierung dieser Abstraktion wird 
+Cinder\footnote{Block Storage Service von OpenStack} CSI\footnote{\href{https://github.com/kubernetes/cloud-provider-openstack/tree/master/pkg/csi/cinder}{Cinder CSI}} genutzt. 
+Eine Implementation des \ac{CSI} muss hierbei die folgenden Aktionen unterstützen \cite{container-storage-interface_2021}:
+\begin{itemize}
+  \item Dynamische Provisionierung sowie Löschen von Volumes
+  \item Anhängen oder abtrennen von Volumes an einem Knoten
+  \item Einhängen und Aushängen von Volumes an einem Knoten.
+  \item Verwaltung von sowohl Block- als auch einhängbarer Volumes
+  \item Erstellung und Löschen von Snapshots (Quelle eines Snapshots ist immer ein Volume)
+  \item Erstellen eines neuen Volumes von einem Snapshot
+\end{itemize}
+
+Sobald im Cluster ein \ac{PVC} erstellt wird, kümmert sich die Anwendung um das Bereitstellen von 
+Cinder Volumes innerhalb der Cloud mittels dem Cinder Service von OpenStack \cite{cinderCSI}.
+Hierbei werden die Volumes immer in der selben Cloudumgebung wie die Knoten erstellt, wodurch der 
+Nutzer des Services sicherstellen kann, dass die Daten des genutztes Chat Services immer in der zuvor 
+gewählten Region verwahrt werden.

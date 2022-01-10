@@ -20,7 +20,9 @@ welche als \ac{IaaS} Services definiert sind.
 Die Openstack Services sollen als starke, multitenant fähige Basis für Kubernetes Cluster dienen. 
 Der Hauptdienst soll Kubernetes as a Service darstellen, auf dem Provider intern ihre \ac{SaaS} aufbauen können \cite{scs}.
 Darauf aufbauend wird ein Container Layer erstellt, welcher mit Hilfe von Containerruntimes
-wie Docker oder Podman\footnote{\href{https://podman.io}{Podman}} gesteuert werden soll \cite{scs}.
+wie Docker oder 
+Podman\footnote{Daemonlose Containerlaufzeitumgebung zur Verwaltung, Erstellung und Betrieb von Containern \cite{podman}.}
+gesteuert werden soll \cite{scs}.
 
 Services wie der in dieser Thesis entwickelte Chat \ac{SaaS} finden sich auf der übergeordneten Ebene \textbf{SCS Platform Services} wieder.
 Für die Entwicklung des Rocket Chat \ac{SaaS} wurde diese Architektur als Grundbild genutzt, indem 

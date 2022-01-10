@@ -7,13 +7,13 @@ genannt werden. Diese Knoten sind dafür zuständig die eigentliche Last, die \t
 Die Kontrollebene\footnote{Containerorchestrationsschicht, welche die API zum Definieren, Bereitstellen und Verwalten von Containern bereitstellt}
 ist verantworlich für die Verwaltung von Knoten und Pods innerhalb des Clusters. 
 Um Fehlertoleranz und eine hohe Verfügbarkeit zu gewähren, besitzt ein Kubernetes Cluster mehrere Knoten und
-die Kontrollebene läuft verteilt über mehrere Systeme.
+die Kontrollebene läuft verteilt über mehrere Systeme \cite{kubernetesComponents}. 
 
 \begin{figure}
   \centering
   \includegraphics[width=1.2\textwidth]{gfx/chapters/2_grundlagen/components-of-kubernetes.pdf}
   \caption{Architektur eines Kubernetes Clusters}
-  \source{\cite{kubernetes}}
+  \source{\cite{kubernetesComponents}}
   \label{fig:kubernetes_architecture}
 \end{figure}
 
@@ -28,18 +28,22 @@ Die Kontrollebene besteht dabei aus den folgenden Teilen:
 \end{itemize}
 
 \paragraph{Etcd} dient als Key-Value Speicher für jegliche Cluster Daten.
+Der API-Server ist hierbei die einzige Komponente im Cluster, welche direkt mit dem verteilten Speichersytem interagiert \cite{Hausenblas2019}.
 \paragraph{Kube-Scheduler} wird im Cluster eingesetzt, um neu erstellte Pods einem Knoten zuzuweisen.
 Hierbei werden Werte wie Ressourcenanforderungen, Hardware/Software oder Richtlinien Beschränkungen, Ort der Daten \dots
 als Faktoren für die Zuweisung verwendet.
-\paragraph{Kube-apiserver} ist der Einstiegspunkt in das Cluster. 
+\paragraph{Kube-apiserver} ist der Einstiegspunkt und die zentrale Managmenteinheit des Cluster \cite{Hausenblas2019}. 
 Alle Anfragen an das Cluster werden über den API-Server verarbeitet.
+Strukturiert ist der API-Server mithilfe einer REST-HTTP API, welche JSON Daten für Anfragen außerhalb des Clusters
+oder Protobuf\footnote{Protobuf ist Googles sprach- und plattformneutraler, erweiterbare Mechanismus zur Serialisierung strukturierter Daten \cite{protobuf}.}
+bei der Kommunikation innerhalb des Clusters verwendet \cite{Hausenblas2019}.
 \paragraph{Kube-controller-manager} verwaltet Controller innerhalb des Clusters.
 Jeder Ressource wird dabei ein eigener Controller zugewiesen.
 
 % TODO: newLine and 
 Standardmäßig werden Kontrollebenenkomponenten und Knotenkomponenten auf unterschiedlichen Maschinen ausgeführt,
-was aber nicht zwingend notwendig ist. 
-Jeder Knoten, der dem Cluster angeschlossen ist, besteht aus:
+was aber nicht zwingend notwendig ist, jedoch zur Hochverfügbarkeit und Ausversicherheit beiträgt \cite{kubernetesComponents}. 
+Jeder Knoten, der dem Cluster angeschlossen ist, besitzt folgende Komponenten:
 \begin{itemize}
   \item Kubelet
   \item Kube-Proxy
@@ -48,6 +52,7 @@ Jeder Knoten, der dem Cluster angeschlossen ist, besteht aus:
 
 \paragraph{Kubelet} wird als \emph{Agent} auf jedem Knoten im Cluster ausgeführt. 
 Es registiert den Knoten am Cluster und ist für die Bereitstellung der Pods zuständig.
+Kubelet ist ausschließlich für Container zuständig, die von Kubernetes erstellt wurden \cite{kubernetesComponents}.
 \paragraph{Kube-Proxy} ist ein Netzwerk Proxy, der für die Implementierung des Service Konzepts\ref{subsec:kubernetes:ressourcen}
 zuständig ist. 
 Dabei wird sichergestellt, dass die Kommunikation von Pods innerhalb und außerhalb des Clusters möglich ist.
