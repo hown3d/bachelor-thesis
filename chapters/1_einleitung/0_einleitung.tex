@@ -1,27 +1,31 @@
 \chapter{Einleitung}
 \label{chap:einleitung}
 
+\ac{SaaS} ist ein Cloud-Dienst Angebot, welches die Bereitstellung und Verwaltung von betriebsbereiten, 
+gehosteten Anwendungen verspricht \cite{Krebs2012}.
+Da die funktionalen und nicht-funktionalen Anforderungen von \emph{Tenants} sich unterscheiden können,
+müssen Anwendungen konfigurierbar sein \cite{Schroeter2012}. 
 Moderne container-basierte Anwendungsplattformen vereinfachen das Management und die Entwicklung
 von Software. Kubernetes \cite{kubernetes} ist eine Open Source Containerorchestrierungsplattform und gilt im
 Cloud Native Umfeld als defacto Standard API für den Betrieb von Cloud-native Anwendungen \cite{Burns2019}.
 Es bietet die Möglichkeit, skalierbare und verteilte Systeme zu erstellen und zu warten \cite{Burns2019}.
 Kubernetes Operatoren bieten die Möglichkeit die Kubernetes API durch eigene Ressourcen zu erweitern. 
-Es wurde von CoreOS\footnote{\url{https://coreos.com}} entwickelt.
+Dieses Prinzip wurde 2016 von CoreOS\footnote{\url{https://coreos.com}} erstmals vorgestellt.
 Das Projekt \emph{Gaia-X} wurde als Basis für eine föderale, offene Dateninfrastruktur auf der Grundlage europäischer Werte gegründet.
 Als Hauptziel gilt die digitale Souveränität. Innerhalb der Plattform sollen Daten sicher gesammelt und verteilt werden.
-Die europäische Cloud soll als vernetzte europäische Alternative zu etablierten \emph{Hyperscaler Clouds}, wie \ac{AWS},
-Microsoft Azure und \ac{GCP}. Ziel ist eine homogene und standardisierte Dateninfrastruktur für europäische Cloudanbieter.
+Die europäische Cloud soll als vernetzte, europäische Alternative zu etablierten \emph{Hyperscaler Clouds}, wie \ac{AWS},
+Microsoft Azure und \ac{GCP} dienen. Ziel ist eine homogene und standardisierte Dateninfrastruktur für europäische Cloudanbieter.
 Das Konzept der Gaia-X Cloud ist ein vernetztes Knotenprinzip, in dem Transparenz mittels einer Selbstbeschreibung der Services
 über Ort der Datenspeicherung und der verwendenten Technologie geboten wird.
 Die Teilnahme von Cloudanbietern an dem Projekt erfordert ein gewisser Standard, sowie die Erfüllung von Regeln durch eine Zertifizerung \cite{BMWi2019}.
 
 \paragraph{}
-Diese Arbeit soll eine Referenzimplementation für einen \emph{Multi-Tenant}\footnote{Teilen eines Systems mit anderen Nutzern, welche spezifische Privilegien innerhalb des Systems besitzen}
-Chat \ac{SaaS} bieten, welche auf dem Operator Pattern von Kubernetes aufbaut.
-% und wie \acp{SLA} \ref{chapter:sla} eingehalten werden.
+Diese Arbeit soll eine Referenzimplementation für einen 
+Chat \ac{SaaS} bieten, welche auf dem Operator Pattern von Kubernetes basiert sowie mehrere \emph{Middleware Komponenten} nutzt.
 Eine Einbettung in bereits vorhandene Gaia-X Testumgebungen soll ebenfalls realisiert und verdeutlicht werden,
-wie bereits jetzt \acp{SaaS} in Gaia-X umsetzbar sind. Dazu wird eine lokale Teststruktur mittels dem Framework OpenStack erstellt,
-welches für Gaia-X auch genutzt werden soll \cite{scs}.
+wie bereits jetzt \acp{SaaS} Applikationen in Gaia-X umsetzbar sind. 
+Dazu wird eine lokale Teststruktur mittels dem Framework OpenStack erstellt,
+welches als Basis für Gaia-X Services genutzt werden soll \cite{scs}.
 
 Zunächst werden einige Grundlagen bezüglich Container und Kubernetes gegeben, sowie eine Vertiefung zum Thema Gaia-X.
 Im Verlauf der Arbeit werden desweiteren die einzelnen Komponenten der Referenzimplementation erläutert, sowie die Einhaltung der \acp{SLA}.

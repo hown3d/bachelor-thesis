@@ -3,11 +3,10 @@
 
 In\cite{Truyen2016} beschreiben \citeauthor{Truyen2016}
 das Erstellen von \emph{Multi-Tenant}
-\acf{SaaS} mithilfe von Container Orchestrierungssoftware wie Kubernetes.
+\acf{SaaS} mithilfe von Containerorchestrierungssoftware wie Kubernetes.
 \acp{SaaS} werden immer häufiger auf skalierbaren Plattformen gehostet, um eine hohe Verfügbarkeit sowie Ausfallsicherheit zu gewährleisten.
 Innerhalb ihres Papers gehen sie auf die Vor- und Nachteile des Containeransatzes ein.
 Ein klarer Vorteil sei die Möglichkeit des Multi-Cloud Modells, da Kubernetes unabhängig der jeweiligen Cloud Anbieter einsetzbar ist.
-und einen Standard implementieren.
 Isolationsmöglichkeiten zwischen den \emph{Tenants} habe einen hohen Anspruch für Sicherheit und Datenschutz.
 Ein weiterer Problemfall sei der hohe Aufwand zum Managment des Deployments\footnote{Bereitstellung} der Anwendung.
 Sie präsentieren eine Referenzarchitektur zum Erstellen von Container basierten Multi-Tenant SaaSs.
@@ -19,15 +18,16 @@ des Papers dieses noch nicht vorhanden war.
 
 \paragraph{}
 Als weitere Möglichkeit zur Abstraktion von Softwaremanagment für Endnutzer entwickeln \citeauthor{Wieder2012} in ihrem Paper
-\cite{Wieder2012} ein System, das die Cloud-Kunden von der Last befreit, zu entscheiden, welche Dienste innerhalb einer Cloud zu verwenden.
+\cite{Wieder2012} ein System, das Cloud-Kunden von der Entscheidung befreit, welche Dienste innerhalb einer Cloud zu verwenden.
 Dabei wird speziell auf den Fall von MapReduce Operationen eingegangen. Kunden sollen nur entsprechende Ziele definieren, beispielsweise
 die Minimierung der Kosten, eine Berechnung, die in der Cloud ausgeführt werden soll, sowie eine Liste von Cloud Services.
 Das System erstellt automatisch die Berechnung und optimiert während der Laufzeit die Anwendung basierend auf externen Zuständen.
-Ein Problem liegt hierbei bei der Beschränkung auf kurzweilige Berechnungen, welche keine Grundlagen für \acp{SaaS} bieten.
+\citeauthor{Wieder2012} betrachten in ihrer Arbeit nur den Fall von MapReduce Operationen auf bereits existierenden Services
+und nicht die Erstellung eigener Services.
 
 \paragraph{}
-Im Paper \cite{Bousselmi2014} wird das \ac{CPP} für SaaSs beschrieben, welches als Hauptziel die Optimierung der Ressourcennutzung
-der Cloudkomponenten sowie die Minimerung der Antwortzeit verfolgt.
+Im Paper \cite{Bousselmi2014} wird das \ac{CPP} für \acp{SaaS} beschrieben, welches als Hauptziel die Optimierung der Ressourcennutzung
+der Cloudkomponenten sowie die Minimierung der Antwortzeit verfolgt.
 Eine gelungene Lösung für das \ac{CPP} solle folgende Anforderungen erfüllen:
 \begin{itemize}
   \item \texttt{Platzierungsalgorithmus}
@@ -35,7 +35,7 @@ Eine gelungene Lösung für das \ac{CPP} solle folgende Anforderungen erfüllen:
   \item \texttt{Provisionierungsalgorithmus}
   \item \texttt{Cloudunabhängig}
 \end{itemize}
-Desweiteren bieten \citeauthor{Bousselmi2014} eine Übersicht der bereits existierenden Lösungen des \ac{CPP} für \acp{SaaS}.
-Allerdings wurden nur das Nutzen von \acf{VM} bedacht, welche Nachteile gegenüber Container besitzen.
-Da \acp{VM} zusätzlich Hardware virtualisieren müssen, wodurch Ressourcen eingespart werden können \cite{seo2014performance}.
+Desweiteren bieten \citeauthor{Bousselmi2014} eine Übersicht der bereits existierenden Lösungen des \ac{CPP} für \ac{SaaS} Anwendungen.
+Hierbei wurde allerdings nur die Nutzung von \acfp{VM} bedacht, welche Nachteile gegenüber Container besitzen.
+Da Container nicht zusätzlich Hardware sowie Kernel virtualisieren müssen, kann Rechenkapazität eingespart werden \cite{seo2014performance}.
 Außerdem besitzen Container eine bessere Kosteneffizienz sowie Performance im Vergleich zu \acp{VM} \cite{soltesz2007container}.

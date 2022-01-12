@@ -1,7 +1,7 @@
 \chapter{Einbettung in Gaia-X kompatible Cloud}
 \label{chapter:gaia-x-einbettung}
 Gaia-X ermöglicht und fördert die Bildung von sogenannten \emph{Federations}.
-Federations werden als eingeständige Ökosysteme beschrieben, in denen sich einzelne Teilnehmer zusammenschließen könnnen,
+Federations werden als eigenständige Ökosysteme beschrieben, in denen sich einzelne Teilnehmer zusammenschließen können,
 um Services innerhalb oder auch außerhalb der Federation anzubieten, um Teilnehmern einen Mehrwert zu bieten.
 Gaia-X operiert nicht, wie alleinstehende Cloud-Providerfirmen, selbst auf dem Markt, sondern erstellt
 Software Komponenten zur Erstellung eines förderalisierten Systems in dem mehrere Teilnehmer
@@ -20,21 +20,21 @@ da zum Zeitpunkt der Thesis nur Infrastruktur Services wie Netzwerke, DNS, \acp{
 und kein Managed Kubernetes Service zur Verfügung stehen.
 Durch die unterliegende Architektur des Gaia-X Providers kann bereits etablierte freie Software
 im Cloud Umfeld genutzt werden, um die Bereitstellung eines Clusters zu ermöglichen.
-Hierbei wurde das Tool \textbf{Kubespray}\footnote{\href{https://github.com/kubernetes-sigs/kubespray}{Kubespray}} genutzt,
+Dazu wurde das Open Source Projekt \textbf{Kubespray}\footnote{\href{https://github.com/kubernetes-sigs/kubespray}{Kubespray}} genutzt,
 welches mit Hilfe der Konfigurationssoftware \textbf{Ansible} und dem \ac{IaC} Tool \textbf{Terraform}
 \acp{VM}, Netzwerk und Sicherheitsgruppen für die Kubernetes Knoten erstellt.
 
 Aufgrund der zeitlichen Begrenzung von 30 Tagen der Testlizenz, wurde jedoch noch eine lokal
 testbare Version der Openstack Services erstellt, welche Plusserver nutzt.
-Hierbei werden alle benötigen Services in Containern bereitgestellt, welche auf der Entwicklungs-
-plattform betrieben werden können.
-Somit kann die Cloudunabhängigkeit von Kubernetes zum Vorteil für Entwickler genutzt werden.
+Alle benötigen Services werden in Containern bereitgestellt, welche lokal 
+betrieben werden können.
+Somit kann die Cloudunabhängigkeit von Kubernetes zum Vorteil für Entwickler und der schnellen Entwicklung genutzt werden.
 
 
 \section{Bereitstellung im Gaia-X Katalog}
 \label{sec:gaia-x-einbettung:gaia-x-katalog}
 Gaia-X definiert als Standard einen sogenannten Katalog, in dem Federations Services registrieren können
-und Endnutzer mittels Suchalogrithmen einen Service für ihre Bedürfnisse finden können.
+und Endnutzer mittels Suchalgorithmen einen Service für ihre Bedürfnisse finden können.
 Im Katalog bereitgestellte Services müssen den Nutzer informieren, welche Eigenschaften der jeweilige Service besitzt.
 Dadurch können Endnutzer auswählen, welche Services in welcher Region und zu welchen Umständen sie nutzen möchten.
 Dieses Prinzip wird in Gaia-X \emph{Self-Description} genannt. Self-Descriptions werden mittels JSON-LD dargestellt, ein

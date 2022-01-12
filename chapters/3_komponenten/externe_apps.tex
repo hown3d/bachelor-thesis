@@ -18,7 +18,7 @@ verwendet, um für neue Ingress Ressourcen automatisch DNS Einträge zu erstelle
 Der \textbf{Nginx Ingress Controller} dient als Reverse Proxy für alle Ingress Ressourcen innerhalb des Clusters.
 Mithilfe des in \ref{sec:komponenten:operator} genannten Synchronisationsmechanismus wird der Nginx Webserver so 
 konfiguriert, sodass mittels Host Headern in Anfragen an den Server die jeweils richtige Route zu den Containern hergestellt wird. 
-Da der Controller als Proxy dient, muss zudem nur eine Externe IP für alle Chat Services genutzt werden, was
+Da der Controller als Proxy dient, muss zudem nur eine externe IP für alle Chat Services genutzt werden, was
 zu Kostenersparnissen in der Cloud führt. Die DNS Einträge für alle Chat Instanzen werden durch die Nutzung 
 von ExternalDNS auch automatisch an die IP des Loadbalancers für den Nginx Controller angepasst.
 

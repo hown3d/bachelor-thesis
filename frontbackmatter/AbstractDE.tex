@@ -9,21 +9,20 @@
 	Wie werden sensible Daten, wie es Chat Nachrichten sein können, DSGVO konform gespeichert.
 	Für dieses Problem wurde die Initiative Gaia-X gegründet, um einen europäischen Cloud Service anzubieten.
 
-
 	Gaia-X besitzt seit 2021 mit Plusserver Open Cloud, die erste Referenzcloud für die zukünfigte Gaia-X Architektur,
-	wobei aktuell nur Infrastrukturlösungen, wie \acp{VM}, Speicher und Netzwerk angeboten wird. 
+	wobei aktuell nur Infrastrukturlösungen, wie \acp{VM}, Speicher und Netzwerk angeboten werden. 
 	Software Services, wie amerikanische Hyperscaler Clouds anbieten, sind aktuell noch nicht implementiert.
-	Deshalb soll in dieser Arbeit eine neue Referenzimplemntation für einen \ac{SaaS} Chat in einer Gaia-X kompatiblen Cloud erstellt werden.
+	Deshalb soll in dieser Arbeit eine neue Referenzimplementation für einen Chat \ac{SaaS} in einer Gaia-X kompatiblen Cloud erstellt werden.
 	Bei einem Software as a Service Prinzip soll der Endnutzer sich nicht um den Betrieb, Bereitstellung der Software
-	oder Skalierung der Anwendung kümmern müssen. Für den Endnutzer wird eine Schnittstelle bereitgestellt, 
-	worüber er seinen Service erstellen kann.
-	Als Implementation des \ac{SaaS} wird eine containerbasierte Lösung angestrebt, welche mittels dem defacto Standard Framework für 
+	oder Skalierung der Anwendung kümmern müssen. 
+	Die \ac{SaaS} Anwendung wird als containerbasierte Lösung erstelt, welche mittels dem defacto Standard Framework für 
 	Containerorchestrierung Kubernetes \cite{Burns2019} betrieben wird. Vorteil dieses Ansatzes ist die einfache Skalierungsmöglichkeit,
 	ein großes Ökosystem für Kubernetes sowie Unabhängigkeit von Cloudanbietern, 
 	sodass diese Architektur auf jeder Infrastruktur zum Einsatz kommen kann \cite{Burns2019}.
 
-	Ein \ac{SaaS} für Gaia-X ist also schon heute möglich und kann damit zur Konkurrenz für etablierte amerikanische Cloudanbieter werden,
-	wobei dieses Ziel noch weit in der Zukunft liegt. Aktuell bietet Gaia-X eine \ac{IaaS} Struktur an,
-	welche sich für den produktiven Einsatz im Gegensatz zu AWS, Azure und Google Cloud nicht anbietet,
-	wenn mehr als nur \acp{VM} benötigt werden.
+	Das Ergebnis dieser Arbeit zeigt, dass ein \ac{SaaS} für Gaia-X schon heute möglich ist, 
+	wobei der produktive Einsatz und damit als Konkurrenz für etablierte amerikanische Cloudanbieter noch nicht erreichbar ist. 
+	Gaia-X definiert zwar einen Standard zur Erstellung eines förderalisierten Systems und zur Kommunikation und Interaktion 
+	der Teilnehmer, jedoch ist dieser noch nicht effektiv einsetzbar. 
+
 \end{otherlanguage}
