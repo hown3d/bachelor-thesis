@@ -1,2 +1,19 @@
 \subsubsection{Service}
 \label{subsec:kubernetes:service}
+Pods können innerhalb eines Clusters auf mehreren Knoten verteilt operieren.
+Beispielsweise erstellt und löscht Kubernetes bei der Nutzung eines Deployment dynamisch Pods \cite{kubernetesService}.
+Da jeder Pod eine eigene IP-Addresse innerhalb des Clusters zugeteilt bekommt, führt das zum Problem der Kommunikation innerhalb des Systems.
+Welche IP-Adressen der Pods (beispielsweise Backend),
+die eine Funktionalität für andere Pods bereitstellen, soll von anderen Pods (beispielsweise Frontend) verwendet werden \cite{kubernetesService}?
+\paragraph{Service Discovery}
+dient als Lösung für dieses Problem.
+Grundlage der Service Discovery sind in Kubernetes \textbf{Service} Objekte.
+In Kubernetes sind Services eine Abstraktion, welche eine Gruppe von Pods und eine Richtlinie für den Zugriff auf diese definiert \cite{kubernetesService}.
+Jeder Service besitzt einen sogenannten \emph{Selector}, über welche definiert wird, welche Pods in die Gruppe des Services aufgenommen werden soll \cite{Burns2019}.
+Zur Kommunikation von anderen Pods werden Service Objekten eine eigene virtuelle IP-Adresse 
+sowie ein DNS Eintrag innerhalb des Clusters zugewiesen.
+Über diese IP-Adresse werden Anfragen an Pods über einen Lastverteiler, welcher durch die \emph{kube-proxy} Komponente gesteuert wird,
+verteilt \cite{Burns2019}.
+Um Clients nicht mit virtuellen, sich möglicherweise ändernden IP-Adressen zu konfigurieren, stellt Kubernetes einen DNS Service zur
+Verfügung \cite{Burns2019}.
+Der DNS-Name eines Services setzt sich immer aus dem Namen und dem Namespace des Services zusammen \cite{kubernetesService}.
