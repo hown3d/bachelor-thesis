@@ -6,24 +6,31 @@
 
 \begin{otherlanguage}{american}
 	\chapter*{Abstract}
-	Large public cloud providers such as AWS, Google and Microsoft have a hard time with data protectionists:
-	How to store sensitive data, as it can be chat messages, in a DSGVO compliant way.
-	For this problem, the initiative Gaia-X was founded to offer a European cloud service.
+The market leaders in the public cloud sector (Amazon, Google and Microsoft) from the U.S. region
+	have a hard time with data protectionists:
+	How is sensitive data, such as chat messages, stored in compliance with the GDPR?
+	This is a question of European data protection and the conflict with US law such as the US Cloud Act.
+	For this problem, the Gaia-X initiative was founded to provide a European cloud service.
 
-	Gaia-X has had Plusserver Open Cloud since 2021, the first reference cloud for the future Gaia-X architecture,
-	currently only offering infrastructure solutions such as \acp{VM}, storage and network. 
-	Software services, like American hyperscaler clouds offer, are currently not implemented.
-	Therefore, in this paper a new reference implementation for a chat \ac{SaaS} in a Gaia-X compatible cloud will be created.
-	With a Software as a Service principle, the end-user should not have to worry about the operation, deployment
+	In many companies, chat systems are already used as a central communication system.
+	Data in such chat systems is therefore often confidential and may contain company secrets.
+	If a company operates such a system with an American cloud provider, the question of data security arises.
+	Therefore, a new reference implementation for a chat \ac{SaaS} in a Gaia-X compatible cloud is to be created in this work.
+	In a Software as a Service principle, the end-user should not have to worry about the operation, deployment
 	or scaling of the application. 
 	The \ac{SaaS} application is created as a container based solution using the defacto standard framework for 
 	Kubernetes container orchestration \cite{Burns2019}. The advantage of this approach is the ease of scaling,
 	a large ecosystem for Kubernetes as well as independence from cloud providers, 
 	so that this architecture can be deployed on any infrastructure \cite{Burns2019}.
-
+	\paragraph{}
+	Gaia-X has Plusserver Open Cloud, the first reference cloud for the future Gaia-X architecture, since 2021,
+	in which this SaaS application will be deployed.	
+	However, Plusserver Open Cloud currently only offers infrastructure solutions such as \acp{VM}, storage and network. 
+	Software services, like American hyperscaler clouds offer, are not currently implemented.
 	The result of this work shows that a \ac{SaaS} for Gaia-X is already possible today, 
 	although productive use and thus as competition for established American cloud providers is not yet achievable. 
-	Gaia-X defines a standard for the creation of a federalized system and communication and interaction between participants. 
-	The standard cannot yet be used effectively. 
+	Gaia-X defines a standard for the creation of a federalized system and for the communication and interaction of the participants. 
+	of the participants, but this cannot yet be used effectively. 
+
 
 \end{otherlanguage}

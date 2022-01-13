@@ -1,6 +1,18 @@
 \chapter{Einleitung}
 \label{chap:einleitung}
 
+% Context, Motiviation, Lösungsweg, erzielte Ergebnisse, weiterer Aufbau
+
+% Context
+Das Projekt \emph{Gaia-X} wurde als Basis für eine föderale, offene Dateninfrastruktur auf der Grundlage europäischer Werte gegründet.
+Das Ziel der Initiative ist die Erstellung einer föderalisierten Dateninfrastruktur, 
+welche auf europäischen Werten zu Daten und Cloudsouveränität basiert \cite{GaiaXArchitecture2021}.
+Die europäische Cloud soll als vernetzte, europäische Alternative zu etablierten \emph{Hyperscaler Clouds}, wie \ac{AWS},
+Microsoft Azure und \ac{GCP} dienen. Ziel ist eine homogene und standardisierte Dateninfrastruktur für europäische Cloudanbieter.
+Das Konzept der Gaia-X Cloud ist ein vernetztes Knotenprinzip, in dem Transparenz mittels einer Selbstbeschreibung der Services
+über Ort der Datenspeicherung und der verwendenten Technologie geboten wird.
+Die Teilnahme von Cloudanbietern an dem Projekt erfordert ein gewisser Standard, sowie die Erfüllung von Regeln durch eine Zertifizerung \cite{BMWi2019}.
+\ac{SaaS} Anwendungen in Gaia-X sollen mithilfe eines Katalogs für Nutzer verfügbar gemacht werden \cite{GXFS2021}.
 \ac{SaaS} ist ein Cloud-Dienst Angebot, welches die Bereitstellung und Verwaltung von betriebsbereiten, 
 gehosteten Anwendungen verspricht \cite{Krebs2012}.
 Da die funktionalen und nicht-funktionalen Anforderungen von \emph{Tenants} sich unterscheiden können,
@@ -9,25 +21,47 @@ Moderne container-basierte Anwendungsplattformen vereinfachen das Management und
 von Software. Kubernetes \cite{kubernetes} ist eine Open Source Containerorchestrierungsplattform und gilt im
 Cloud Native Umfeld als defacto Standard API für den Betrieb von Cloud-native Anwendungen \cite{Burns2019}.
 Es bietet die Möglichkeit, skalierbare und verteilte Systeme zu erstellen und zu warten \cite{Burns2019}.
-Kubernetes Operatoren bieten die Möglichkeit die Kubernetes API durch eigene Ressourcen zu erweitern. 
+Kubernetes Operatoren können die Kubernetes API durch eigene Ressourcen zu erweitern. 
 Dieses Prinzip wurde 2016 von CoreOS\footnote{\url{https://coreos.com}} erstmals vorgestellt.
-Das Projekt \emph{Gaia-X} wurde als Basis für eine föderale, offene Dateninfrastruktur auf der Grundlage europäischer Werte gegründet.
-Als Hauptziel gilt die digitale Souveränität. Innerhalb der Plattform sollen Daten sicher gesammelt und verteilt werden.
-Die europäische Cloud soll als vernetzte, europäische Alternative zu etablierten \emph{Hyperscaler Clouds}, wie \ac{AWS},
-Microsoft Azure und \ac{GCP} dienen. Ziel ist eine homogene und standardisierte Dateninfrastruktur für europäische Cloudanbieter.
-Das Konzept der Gaia-X Cloud ist ein vernetztes Knotenprinzip, in dem Transparenz mittels einer Selbstbeschreibung der Services
-über Ort der Datenspeicherung und der verwendenten Technologie geboten wird.
-Die Teilnahme von Cloudanbietern an dem Projekt erfordert ein gewisser Standard, sowie die Erfüllung von Regeln durch eine Zertifizerung \cite{BMWi2019}.
 
+% Motiviation
 \paragraph{}
-Diese Arbeit soll eine Referenzimplementation für einen 
-Chat \ac{SaaS} bieten, welche auf dem Operator Pattern von Kubernetes basiert sowie mehrere \emph{Middleware Komponenten} nutzt.
-Eine Einbettung in bereits vorhandene Gaia-X Testumgebungen soll ebenfalls realisiert und verdeutlicht werden,
-wie bereits jetzt \acp{SaaS} Applikationen in Gaia-X umsetzbar sind. 
-Dazu wird eine lokale Teststruktur mittels dem Framework OpenStack erstellt,
-welches als Basis für Gaia-X Services genutzt werden soll \cite{scs}.
+Chat-Systeme, wie Rocket oder Slack, werden bereits in vielen Unternehmen ausschließlich oder im Zusammenhang mit E-Mails
+zur Kommunikation innerhalb des Unternehmens genutzt. Daten dieser Chat-Systeme sind aus diesem Grund oftmals vertraulich
+und können Firmengeheimnisse sowie personenbezogene Daten enthalten. 
+Amerikanische Cloudanbieter unterliegen dem amerikanischen \textbf{US Cloud Act}, welcher
+den Datenschutz in Europa gespeicherter Daten gefährdet \cite{Kagermann2021}.
+Betreibt ein Unternehmen nun ein Chat-System bei einem amerikanischen Cloud-Provider oder nutzt eine existierende
+\ac{SaaS} Lösung wie \emph{Slack.com}, kann dies zu einer Gefährdung des Datenschutzes führen.
+Als europäische Alternative zu etablierten Anbietern soll Gaia-X Abhilfe für dieses Problem schaffen.
+Dabei befindet sich die europäische Cloud aktuell noch im Entwicklungsstadium und ist dadurch nicht vollständig einsatzbereit.
+Aus diesem Grund soll in dieser Arbeit ein Ansatz für containerbasierte \ac{SaaS} Anwendungen in der Gaia-X Cloud gegeben werden.
+\citeauthor{Truyen2016} geben in \cite{Truyen2016} eine mögliche Architektur für die Entwicklung eines \acf{SaaS} vor.
+Die Architektur berücksichtigt allerdings nicht den Einsatz des Operator Patterns, 
+dass die Bereitstellung und Verwaltung der Softwarekomponenten deutlich vereinfacht \cite{Dobies2020}.
 
-Zunächst werden einige Grundlagen bezüglich Container und Kubernetes gegeben, sowie eine Vertiefung zum Thema Gaia-X.
-Im Verlauf der Arbeit werden desweiteren die einzelnen Komponenten der Referenzimplementation erläutert, sowie die Einhaltung der \acp{SLA}.
+% Lösung
+\paragraph{}
+Diese Arbeit dient als Referenzimplementation für einen 
+Chat \ac{SaaS}, welche auf dem Operator Pattern von Kubernetes basiert sowie mehrere \emph{Middleware Komponenten} nutzt.
+Der \ac{SaaS} wird in Kubernetes betrieben und für Endnutzer als zentrale Schnittstelle angeboten.
+Dazu wird eine lokale Testinfrastruktur mittels dem Framework OpenStack erstellt,
+welches als Basis für Gaia-X Services dient \cite{scs}.
+
+% Ergebnisse
+\paragraph{}
+Ein produktiver Einsatz neuer Services in Gaia-X kompatiblen Clouds hat sich als noch nicht einsatzbereit erwiesen.
+Zu viele Komponenten des Gaia-X Standards sind bisher nur als Definition im Architekturbild vorhanden, sodass eine konkrete,
+nutzbare Implementation dieser Standards aus bleibt. 
+Testimplementationen, wie beispielsweise die Plusserver Open Cloud, geben aktuell nur die Möglichkeit, Infrastrukturkomponenten
+und keine \ac{SaaS} Applikationen zu nutzen. 
+Ein konsistenter Softwarekatalog für Gaia-X Services ist zwar geplant \cite{BMWi2019},
+wird aktuell allerdings noch nicht angeboten.
+
+% weiterer Aufbau
+\paragraph{}
+Im weiteren Verlauf dieser Arbeit werden einige Grundlagen bezüglich Container und Kubernetes gegeben,
+sowie eine Vertiefung zum Thema Gaia-X und \acf{SaaS}.
+Es folgt die Erläuterung der einzelnen Komponenten der Referenzimplementation, sowie die Einhaltung der \acp{SLA}.
 Im Kapitel \ref{chapter:gaia-x-einbettung} wird beschrieben, wie der Einsatz mit einer Gaia-X kompatiblen Umgebung ermöglicht wurde.
-Zuletzt werden in Abschnitt \ref{chapter:fazit} schließlich einige abschließende Bemerkungen gemacht.
+Zuletzt werden in Abschnitt \ref{chapter:fazit} einige abschließende Bemerkungen gemacht.

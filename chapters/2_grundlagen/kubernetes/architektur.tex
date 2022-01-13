@@ -53,7 +53,7 @@ Jeder Knoten, der dem Cluster angeschlossen ist, besitzt folgende Komponenten:
 \paragraph{Kubelet} wird als \emph{Agent} auf jedem Knoten im Cluster ausgeführt. 
 Es registiert den Knoten am Cluster und ist für die Bereitstellung der Pods zuständig.
 Kubelet ist ausschließlich für Container zuständig, die von Kubernetes erstellt wurden \cite{kubernetesComponents}.
-\paragraph{Kube-Proxy} ist ein Netzwerk Proxy, der für die Implementierung des Service Konzepts\ref{subsec:kubernetes:ressourcen}
+\paragraph{Kube-Proxy} ist ein Netzwerk Proxy, der für die Implementierung des Service Konzepts \ref{subsec:kubernetes:service}
 zuständig ist. 
 Dabei wird sichergestellt, dass die Kommunikation von Pods innerhalb und außerhalb des Clusters möglich ist.
 \paragraph{Containerlaufzeitumgebung} betreibt die von Kubelet angeforderten Container für einen Pod. 
