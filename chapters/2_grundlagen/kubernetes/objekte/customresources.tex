@@ -1,2 +1,17 @@
 \subsubsection{Custom Resource}
-\label{subsection:kubernetes:customresource} 
+\label{subsection:kubernetes:customresource}
+Custom Resource Objekte sind eine Erweiterung der Kubernetes API,
+welche nicht standardmäßig in einer Installation verfügbar sind \cite{kubernetesCustomResource}.
+Zur Erstellung einer Custom Resource ist die Verwendung von \acf{CRD} Objekten notwendig. 
+\acp{CRD} sind Meta-Objekte.
+Sie dienen dem Zweck andere Objekte im Cluster zu definieren \cite{Burns2019}.
+Jede \ac{CRD} besitzt, neben Metadaten, ein \emph{Spec} Subobjekt. Dieses Subobjekt definiert die API des Objekts.
+Als Beispiel ist in \ref{chap:rocketchat_crd_spec} das Spec Objekt des in dieser Arbeit genutzten \ac{CR} Objekts abgebildet.
+
+
+Zur Validierung dieser Spezifikation bei Erstellung des Objekts im Cluster können \emph{Admission Controller} genutzt werden \cite{Burns2019}.
+Dabei fangen sie Anfragen an den API Server ab, überprüfen diese auf Korrektheit 
+und können die in der Anfrage enthaltenen Objekte gegebenenfalls verändern oder ablehnen \cite{Burns2019}. 
+
+
+Durch den Verbund von \acp{CR} mit dem Operator Pattern können Entwickler Business Logik als Erweiterung der Kubernetes API definieren \cite{kubernetesCustomResource}.

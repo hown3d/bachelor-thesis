@@ -5,11 +5,15 @@ Das System nutzt diese Entitäten um den Status des Clusters zur repräsentieren
 
 Objekte können die folgenden Dinge beschreiben:
 \begin{itemize}
-  \item Welche containerisierten Applikationen laufen auf welchen Knoten im Cluster
-  \item Ressourcen die für die Applikationen vorhanden sind
+  \item Welche containerisierten Anwendungen laufen auf welchen Knoten im Cluster
+  \item Ressourcen, die für Anwendungen vorhanden sind
   \item Richtlinien, wie sich die Anwendungen verhalten soll, beispielsweise Ausfallsicherheit, Updates und Neustarts
 \end{itemize}
 
-Sobald ein Objekt im Cluster erstellt wird, arbeitet Kubernetes daran, das die gewünschte Konfiguration des Objekts
+Sobald ein Objekt erstellt wird, arbeitet Kubernetes daran, das die gewünschte Konfiguration des Objekts
 im Cluster vorhanden ist. 
-Effektiv bedeutet die Erstellung eines Objekts im Cluster die Definition der Workload, dem gewünschte Zustand des Clusters \cite{KuberneteObjects_2021}.
+Effektiv bedeutet die Erstellung eines Objekts die Definition des Zustands im Clusters \cite{KuberneteObjects_2021}.
+
+Um Objekte innerhalb eines Clusters in Gruppen zu isolieren, bietet Kubernetes das Prinzip des \textbf{Namespace} \cite{kubernetesNamespaces}.
+Durch die Nutzung von Namespaces können komplexe Systeme mit unzähligen Komponenten
+in kleine, deutliche Gruppen geteilt werden \cite{Marko2018}.

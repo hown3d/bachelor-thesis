@@ -1,2 +1,18 @@
 \subsubsection{Rollenbasierte Zugriffskontrolle}
 \label{subsec:kubernetes:rbac}
+Rollenbasierte Zugriffskontrolle bietet einen Mechanismus zur Zugriffs- und Aktionsbeschränkung auf Kubernetes API Endpunkte.
+Durch Nutzung dieser Kontrolle wird sichergestellt, dass nur vorgesehene Nutzer Zugriff auf gewisse API Endpunkte und damit deren
+Objekte besitzen \cite{Burns2019}.
+
+Unterschieden werden im \ac{RBAC} System zwischen vier Kubernetes Objekten:
+\begin{itemize}
+  \item Role
+  \item ClusterRole
+  \item RoleBinding
+  \item ClusterRoleBinding
+\end{itemize}
+
+Objekte mit dem Prefix \emph{Cluster} sind nicht auf einen Namespace im Cluster beschränkt \cite{kubernetesRbac}.
+\emph{Role} und \emph{ClusterRole} Objekte enthalten Regeln, die eine Gruppe von Berechtigungen enthält \cite{kubernetesRbac}.
+Um eine solche Role nun einem Nutzer oder \emph{Service Account} (\ref{subsec:kubernetes:serviceaccount}) zuzuweisen,
+werden \emph{RoleBinding} und \emph{ClusterRoleBinding} Objekte genutzt \cite{Burns2019}.

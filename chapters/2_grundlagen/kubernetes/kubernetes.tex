@@ -1,19 +1,19 @@
 \section{Kubernetes}
 \label{sec:grundlagen:kubernetes}
 Kubernetes hat sich seit seiner Einführung von Google in 2014 zu einer der größten und populärsten 
-Open Source Projekte der Welt entwickelt. Es ist zum Standart für die Entwicklung von cloud-nativen 
+Open Source Projekte der Welt entwickelt. Es ist zum Standard für die Entwicklung von cloud-Native 
 Anwendungen geworden. 
 Software gehört für uns zum Alltag und muss eine hohe Verfügbarkeit gewährleisten, sodass eine Downtime\footnote{Service ist nicht verfügbar}
-für Wartungen oder neue Versionen keine Möglichkeit ist. 
+für Wartungen oder neue Versionen keine Option ist. 
 Zudem müssen Anwendungen skalierbar sein, um ihre Kapazität für die immer weiter ansteigende Nutzung zu gewährleisten.
 
 Kubernetes und Container im generellen ermutigen Entwickler nach dem Konzept \emph{Immutable Infrastructure} zu arbeiten.
 Die Prinzipien sind dabei, dass sobald eine Version beziehungsweise ein Artefakt einer Softwarekomponente erstellt wird,
 Nutzer keine Änderungen an dem System vornehmen. 
-Anstatt auf einem Server eine neue Version seines Servers einzuspielen, werden neue Container Abbilder erstellt 
+Anstatt auf einem Server eine neue Version der Anwendung einzuspielen, werden neue Container Abbilder erstellt 
 und der laufende Container mit dem neuen Abbild ersetzt.
 
-In Kubernetes werden alle Applikationen als deklarative Konfigurationsobjekte dargestellt, welche einen gewünschten
+In Kubernetes werden alle Anwendungen als deklarative Konfigurationsobjekte dargestellt, welche einen gewünschten
 Status des Systems abbilden. Kubernetes muss dabei sicherstellen, dass der tatsächliche Status dem gewünschten entspricht.
 Dabei ist es ein \emph{Selbstheilendes System}.
 Das bedeutet, das System überwacht den aktuellen Status kontinuierlich, um Abweichungen zu erkennen \cite{Burns2019}.

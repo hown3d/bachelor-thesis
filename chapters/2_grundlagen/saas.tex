@@ -1,8 +1,25 @@
 \section{Software as a Service}
 \label{sec:grundlagen:saas}
+Durch die Nutzung eines \acf{SaaS} werden Kunden eine Standardsoftwarelösung als Dienstleistung via Internet bereitgestellt.
+Der Anbieter des \ac{SaaS} ist dabei für den Betrieb und Wartung der Anwendung verantwortlich \cite{Buxmann2008}.
+Hauptgrund der Nutzung eines \ac{SaaS} ist die Einsparung von Kosten.
+Die Einsparungen werden durch den Wegfall von Investionen in Lizenen und Infrastrukturen realisert,
+da die Gebühren eines \ac{SaaS} meistens als \emph{Pay per Use} Modell umgesetzt werden \cite{Tan2013}.
+Weitere Vorteile der Nutzung eines \ac{SaaS} sind \textbf{Zugänglichkeit, Zuverlässigkeit, Konfigurierbarkeit und Skalierbarkeit} \cite{Tan2013}.
+\paragraph{Zugänglichkeit}
+wird durch einen einfachen Zugang zum Service gewährleistet. Nutzer können über Browser auf den Service zugreifen \cite{Tan2013}.
 
+\paragraph{Zuverlässigkeit}
+Durch die Wartung des \ac{SaaS} durch den Anbieter, ist er ebenfalls verantwortlich für Verfügbarkeit und Sicherheit des Service.
+Um Datenverlust zu vermeiden, können Backups der Nutzerdaten erstellt werden \cite{Tan2013}.
 
-\subsection{Tenant}
-\label{subsec:saas:tenant}
-% TODO: Change!
-Tenants are interest groups or companies that rent a tailored application from the SaaS application provider \cite{Schroeter2012}.
+\paragraph{Konfigurierbarkeit}
+Jeder Nutzer des Services können den Diesnt an ihre individuellen Bedürfnisse anpassen.
+Realisert wird dies durch die \emph{Multitenant} Fähigkeit eines \ac{SaaS} \cite{Tan2013}.
+Tenants sind Interessengruppen oder Firmen, die eine maßgeschneiderte Anwendung des \ac{SaaS} Anbieters mieten \cite{Schroeter2012}.
+
+\paragraph{Skalierbarkeit}
+Cloud Computing bietet die Möglichkeit, Rechenkapazität auf das Bedürfnis der Nutzer anzupassen \cite{Tan2013},
+ohne die Architektur der Anwendung zu ändern \cite{Satyanarayana2012}.
+Dadurch muss Architektur des \ac{SaaS} in der Lage sein, Lastverteilung über mehrere identische Anwendungsinstanzen
+zu unterstützen \cite{Satyanarayana2012}.

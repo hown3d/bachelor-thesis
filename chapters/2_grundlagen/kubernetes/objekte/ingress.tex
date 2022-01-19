@@ -1,8 +1,8 @@
 \subsubsection{Ingress}
 \label{subsec:kubernetes:ingress}
-Ingress dienen dem externen Zugriff auf die Dienste in einem Cluster \cite{kubernetesIngress}.
-Hierbei werden HTTP und HTTPS Routen vom Cluster freigegeben, 
-welche auf Service Objekte innerhalb des Cluster verweisen \cite{kubernetesIngress}.
+Ingress Objekte dienen dem externen Zugriff auf die Dienste in einem Cluster.
+Hierbei werden HTTP und HTTPS Routen freigegeben, 
+welche auf Service Objekte innerhalb des Cluster verweisen.
 Routen können basierend auf Pfaden oder Host-Headern an verschiedene Service Objekte und somit Pods verteilt werden \cite{kubernetesIngress}.
 Dargestellt wird dieser Kommunikationsfluss in \ref{fig:ingress_communication}.
 
@@ -19,7 +19,7 @@ Nutzer müssen selbst dafür sorgen, einen Ingress Controller,
 wie beispielsweise den Nginx Ingress Controller \ref{sec:komponenten:externe-apps}, zu installieren \cite{Burns2019}.
 
 Zur Verschlüsselung der Kommunikation können Ingress Objekten eine TLS Konfiguration übergeben werden.
-Hierfür werden SSL Zertifikate sowie Schlüssel in Secret Objekten (\ref{subsec:kubernetes:secret}) gespeichert und im
+Hierfür werden SSL Zertifikate sowie Schlüssel in Secret Objekten (\ref{subsec:kubernetes:configmap_secret}) gespeichert und im
 Ingress Objekt referenziert. 
 Zur Vereinfachung der Verwaltung dieser Zertifikate können Open Source Projekte wie \emph{Cert-Manager} \ref{sec:komponenten:externe-apps}
 genutzt werden, welche die Verwaltung übernehmen \cite{Burns2019}.
