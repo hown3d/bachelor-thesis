@@ -19,14 +19,13 @@ Erstellen der Rocket und MongoDB\footnote{Dokumentenorientierte NoSQL-Datenbank 
 Container sowie Netzwerk-, Anwendungs- und Speicherkonfiguration.
 Bei einer Änderung der Spezifikation eines Rocket Objekts, wird automatisch eine Synchronisation des 
 Clusters vorgenommen, sodass die gewünschte Konfiguration im Cluster deployed ist.
-% TODO: Include Ref to CRD Chapter
 
 Der Rocket API Service \ref{sec:komponenten:rocket-api-service} hat die Aufgabe, 
-dass vom Operator definierte \ac{CR} im Kubernetes Cluster zu erstellen, während der 
-Tenant Service \ref{sec:komponenten:tenant-service} sich um die Konfiguration des Users im Cluster kümmert.
+dass vom Operator definierte \ac{CR} (\ref{subsection:kubernetes:customresource}) im Kubernetes Cluster zu erstellen,
+während der Tenant Service \ref{sec:komponenten:tenant-service} für die Konfiguration des Users im Cluster zuständig ist.
 Hierbei werden Objekte wie beispielsweise Rollen, Namespaces und Quotas erstellt.
 
-Clients \ref{sec:komponenten:clients} haben die Rolle, mit dem Nutzer zu interagieren. Hierbei kann jegliche Art genutzt werden,
-zum Beispiel ein \emph{\ac{CLI}} Tool\footnote{Programm zur Interaktion mit dem User via Kommandozeile}
+Clients \ref{sec:komponenten:clients} haben die Rolle, mit dem Nutzer zu interagieren. 
+Als Client kann jegliche Art dienen, zum Beispiel ein \emph{\ac{CLI}} Tool\footnote{Programm zur Interaktion mit dem User via Kommandozeile}
 , \emph{\ac{IaC} Tools} oder ein \emph{Web Interface}. Aus Zeitgründen wurde für die Referenzimplementation nur
 ein \ac{CLI} Client implementiert.

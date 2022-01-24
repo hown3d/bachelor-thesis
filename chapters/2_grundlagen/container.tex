@@ -1,16 +1,45 @@
 \section{Container}
 \label{sec:grundlagen:container}
-
-Im Gegensatz zu bewährten Virtualisierungsumgebungen wie VMWare und KVM, 
-die eigene Ressourcen wie CPU, RAM und einen Linux Kernel virtualisieren,
-nutzen Container die Ressourcen des Hostsystems. 
-Alle Container nutzen den selben Kernel und Isolation ist dort implementiert.
-Container sind deshalb sehr ressourceneffizient, da nicht für jede Anwendung ein eigenes
-Betriebssystem genutzt werden muss \cite{Kane2018}.
+Container sind eine Virtualisierungslösung für Anwendungen.
+Dabei müssen, im Gegensatz zu \acfp{VM}, nicht ein zusätzliches Betriebsystem virtualiert werden \cite{Marko2018}.
+Dadurch sind Container sehr ressourceneffizient \cite{Kane2018}.
+Alle Container, die innerhalb des Systems laufen, nutzen den Kernel des Hostsystems \cite{Marko2018}.
+Ein Prozess, der in einem Container läuft, läuft immer innerhalb des Host Betriebssystems.
+Der Prozess wird jedoch von anderen Prozessen isoliert, sodass für den Prozess es so aussieht, als würde er
+als einziger Prozess im System laufen \cite{Marko2018}.
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{gfx/chapters/2_grundlagen/virtualization-vs-containers.png}
-  \label{fig:container:vergleich}
+  \includegraphics[width=\textwidth]{gfx/chapters/2_grundlagen/container-vs-vm.png}
   \caption{Virtualization vs. Container Technologie}
-  \source{\cite{Kane2018}}
+  \label{fig:container:vergleich}
+  \source{\cite{Marko2018}}
 \end{figure}
+
+In \ref{fig:container:vergleich} wird der Unterschied von \acp{VM} und Containern dargestellt. 
+Jede Anwendung wird innerhalb eines Containers betrieben, sodass eine vollständige Isolation der Prozesse
+stattfinden kann \cite{Marko2018}.
+
+Die Isolation von Containern findet mit der Nutzung von \emph{Linux Namespaces} und \emph{Linux Control Groups (cgroups)} statt \cite{Marko2018}.
+Namespaces sorgen für die Isolation der Prozesse, 
+während cgroups ein Limit für Ressourcen eines Prozesses festlegen können \cite{Marko2018}.
+
+Container ermutigen Entwickler nach dem Konzept \emph{Immutable Infrastructure} zu arbeiten \cite{Burns2019}.
+Ein Immutable Infrastrucutre Prinzip ist, dass sobald eine Version beziehungsweise ein Artefakt einer Softwarekomponente erstellt wird,
+Nutzer keine Änderungen an der Anwendung im Artefakt vornehmen dürfen \cite{Burns2019}. 
+Anstatt auf einem Server eine neue Version der Anwendung einzuspielen, werden neue Container Abbilder mit dem erstellen Artefakt gebaut, 
+und der laufende Container mit dem neuen Abbild ersetzt \cite{Burns2019}.
+
+\paragraph{Docker}
+dient als Umgebung zum Verwalten, Erstellen und Betreiben von Containern \cite{Marko2018}.
+Dabei besitzt Docker 3 grundliegende Konzepte:
+
+\subparagraph{Images}
+Images sind Abbilder einer Anwendung und dessen Umgebung.
+Es besitzt ein Dateisystem, sowie alle Dateien, die während des Erstellprozesses dem Image hinzugefügt wurden \cite{Marko2018}.
+
+\subparagraph{Registries}
+Registries sind Speicherorte für Images. Sobald ein neues Image erstellt wird, kann es in eine Registry \emph{gepushed} werden,
+um es für andere Systeme zur Verfügung zu stellen \cite{Marko2018}.
+
+\subparagraph{Container}
+Docker Container sind reguläre Linux Container, die von einem Image erstellt wurden \cite{Marko2018}.
