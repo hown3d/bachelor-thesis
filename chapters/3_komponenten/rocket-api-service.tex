@@ -1,7 +1,7 @@
 \section{Rocket-API Service}
 \label{sec:komponenten:rocket-api-service}
 Um Endnutzern nicht die Last zur Verwaltung von Kubernetes Objekten aufzulegen, dient der Rocket-API Service als Mittelschicht zwischen
-Client und Kubernetes. Hierbei wurde ebenfalls mit Hilfe von Googles gRPC\footnote{\href{https://grpc.io/}{gRPC}} Framework
+Client und Kubernetes. Hierbei wurde mit Hilfe von Googles gRPC\footnote{\href{https://grpc.io/}{gRPC}} Framework
 eine API konzipiert, welche Standard CRUD\footnote{Create, Read, Update, Delete} Operationen, sowie das Auslesen
 von Containerlogs implementiert.
 Jeder Client nutzt das OpenID Connect Protokoll, um den Nutzer an der Authentifizierungsstelle, dem Keycloak

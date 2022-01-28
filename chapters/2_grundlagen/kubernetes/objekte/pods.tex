@@ -1,7 +1,7 @@
 \subsubsection{Pods}
 \label{subsec:kubernetes:pods}
 Ein Pod repräsentiert eine Sammlung von laufenden Anwendungscontainern 
-und Volumes (\ref{subsec:kubernetes:volume}) in der selben Umgebung.
+und Volumes (siehe \ref{subsec:kubernetes:volume}) in der selben Umgebung.
 Hierbei sind Pods die kleinste Einheit innerhalb eines Kubernetes Clusters, wodurch alle Container eines Pods
 immer auf dem selben Knoten betrieben werden \cite{Burns2019}.
 Alle Container innerhalb eines Pods teilen sich Netzwerkschnittstellen, Speicher und Hardwareresourcen \cite{kubernetesPods},
@@ -15,7 +15,7 @@ sind jedoch von anderen Pods isoliert \cite{Burns2019}.
 \end{figure}
 
 In \ref{fig:kubernetes_network} wird dargestellt, wie Pods innerhalb eines Cluster betrieben werden.
-Hierbei befindet sich jeder Pod in einem Kubernetes Cluster in einem großen Netzwerk, wodurch Pods mittels IP-Addressen untereinander 
-kommunizieren können \cite{Marko2018}. Jeder Pod bekommt im Cluster seine eigene IP-Adresse und wird einem Knoten zugewiesen.
+Jeder Pod im Kubernetes Cluster befindet sich in einem großen Netzwerk, in dem Pods mittels IP-Addressen untereinander 
+kommunizieren können \cite{Marko2018}. 
 
 

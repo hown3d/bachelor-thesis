@@ -14,9 +14,9 @@ Die Gaia-X Architektur beruht auf den folgenden Design Prinzipien:
 
 \subparagraph{Föderationen}
 Föderalisierte Systeme beschreiben autonome Einheiten, die durch eine spezifizierte Reihe von Normen,
-Frameworks und Regeln verbunden sind.
+Frameworks und Regeln verbunden sind \cite{GaiaXArchitecture2021}.
 Das Prinzip soll mit einer minimalen Anzahl an Vorgaben die Interoperabilität und den Informationsaustausch
-zwischen den einzelnen Einheiten der Föderation ermöglichen. 
+zwischen den einzelnen Einheiten der Föderation ermöglichen \cite{GaiaXArchitecture2021}. 
 Dabei soll gleichzeitig das Höchstmaß an Autonomie gewährleistet werden \cite{GaiaXArchitecture2021}.
 Durch Föderationen können Serviceanbieter ihre Infrastruktur auf vertrauenswürde Weise miteinander verbinden,
 um ein verteiltes Cloud-Modell anzubieten \cite{Bonfiglio2021}.
@@ -33,51 +33,53 @@ Dadurch ist Gaia-X offen für zukünftige Innovationen und Standards und fortsch
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\textwidth]{gfx/chapters/2_grundlagen/gaia-x-architecture.png}
+  \makebox[\textwidth][c]{\includegraphics[width=1.25\textwidth]{gfx/chapters/2_grundlagen/gaia-x-architecture.png}}
   \caption{Konzeptuelles Modell der Gaia-X Architektur}
   \source{\cite{GaiaXArchitecture2021}}
   \label{fig:gaia-x-concept-architecture}
 \end{figure}
 
 \paragraph{Architekturkonzept}
-In \ref{fig:gaia-x-concept-architecture} wird das Architekturkonzept, sowie den Umfang von Gaia-X verdeutlich.
-Der obere Teil des Modells zeigt die verschiedenen Akteure innerhalb von Gaia-X, während der
-untere Teil den Umfang und die Beziehung der Akteuere außerhalb von Gaia-X darstellt.
+In Abbildung \ref{fig:gaia-x-concept-architecture} wird das Architekturkonzept, sowie der Umfang von Gaia-X verdeutlich.
+Die obere Hälfte des Modells zeigt die verschiedenen Akteuere innerhalb von Gaia-X, während die
+untere Hälfte den Umfang sowie das Zusammenspiel der Mitglieder außerhalb von Gaia-X darstellt \cite{GaiaXArchitecture2021}.
 
 \subparagraph{Participants}
 Participants sind Teilnehmer innerhalb von Gaia-X. 
 Dabei können sie eine oder mehrere Rollen einehmen: Föderalist, Anbieter oder Konsument \cite{GaiaXArchitecture2021}.
 
 \subparagraph{Anbieter}
-Anbieter sind Teilnehmer, die Ressourcen im Gaia-X Ecosystem bereitstellen. Zudem stellt
+Anbieter sind Teilnehmer, die Ressourcen im Gaia-X Ökosystem bereitstellen. Zudem stellt
 ein Anbieter Services mit deren allgemeinen Geschäftsbedingungen und technische Richtlinien bereit \cite{GaiaXArchitecture2021}.
 
 \subparagraph{Föderalist}
-Ein Föderalist ist für die Implementierung der Föderationsservices (\ref{subsec:gaia-x:federationservices}) 
-sowie für die Koordination der Teilnehmer zuständig \cite{GXFS2021}.
+Ein Föderalist ist für die Implementierung der Föderationsservices (siehe \ref{subsec:gaia-x:federationservices}) 
+sowie für die Koordination der Teilnehmer innerhalb einer Föderation zuständig \cite{GXFS2021}.
 
 \subparagraph{Konsument}
-Konsumenten nutzen Services im Gaia-X Ecosystem um digitale Angebote für Kunden zu ermöglichen \cite{GaiaXArchitecture2021}.
+Konsumenten nutzen die von Providern bereitgestellten Services im Gaia-X Ökosystem, um digitale Angebote für Kunden zu ermöglichen \cite{GaiaXArchitecture2021}.
 
 \subsection{Föderationsservices}
 \label{subsec:gaia-x:federationservices}
-Föderationsservices können als minimale technische Anforderungen zur Operativität der Föderation angesehen werden \cite{GXFS2021}.
+Föderationsservices können als minimale technische Anforderungen zur Operativität einer Föderation angesehen werden \cite{GXFS2021}.
 Dabei werden Services definiert, welche zur Erfüllung der Ziele von Gaia-X, Vertrauen und Interoperabilität
 aufzubauen, sowie die Sicherstellung von Datensouveränität für Teilnehmer zu gewährleisten, beitragen \cite{GXFS2021}.
 Zum Start des Gaia-X Projekts werden die folgenden vier Services definiert:
 
 \paragraph{Identität und Vertrauen}
-Teilnehmer einer Föderation nutzen diesen Service, um Authentifizierung und Authorisierung innerhalb der Föderation zu nutzen \cite{GXFS2021}.
+Teilnehmer einer Föderation nehmen diesen Service in Anspruch, um Authentifizierung und Authorisierung innerhalb der Föderation zu nutzen \cite{GXFS2021}.
 
 \paragraph{Föderalisierter Katalog}
-Der Katalog dient als zentrales Repository einer Föderation.
-Er ermöglicht Teilnehmern das Finden von Informationen und Dienste anderer Föderationsteilnehmer durch Nutzung von
-\emph{Self-Descriptions} (\ref{sec:gaia-x-einbettung:gaia-x-katalog}) \cite{GXFS2021}.
+Der Katalog dient als zentrales 
+Repository\footnote{Verzeichnis zur Speicherung und Verwaltung von digitalen Informationen} 
+einer Föderation.
+Er ermöglicht Teilnehmern das Finden von Informationen und Diensten anderer Föderationsteilnehmer durch Nutzung von
+\emph{Self-Descriptions} (siehe \ref{sec:gaia-x-einbettung:gaia-x-katalog}) \cite{GXFS2021}.
 
 \paragraph{Datensouveränität}
-Dieser Service hilft Teilnehmer der Föderation Kontrolle und einen Überblick über ihre Daten zu behalten.
+Dieser Service hilft Teilnehmern der Föderation die Kontrolle und Überblick über ihre Daten zu behalten.
 Dabei werden Verfahren implementiert, um Transparenz und Kontrolle über Datennutzung zu definieren \cite{GXFS2021}.
 
 \paragraph{Konformität}
 Konformitätsservices ermöglichen die Überprüfung der gemeinsamen Services in einer Föderation auf Einhaltung
-von Gaia-X Prinzipien wie Datensicherheit \cite{GXFS2021}.
+von Gaia-X Prinzipien, wie den Anspruch an gewisse Datensicherheit \cite{GXFS2021}.

@@ -1,8 +1,7 @@
 \section{Externe Apps}
 \label{sec:komponenten:externe-apps}
 
-Um den Chat Service nun effektiv zu betreiben, werden zusätzliche Open Source Anwendungen zu Nutzen gezogen,
-um die Bereitstellung der Rocket Anwendung für den Endnutzer deutlich zu vereinfachen und den Betrieb leichter zu gestalten.
+Um den Chat Service effektiv und einfach im Cluster zu betreiben, bringt das Kubernetes Ökosystem viele hilfreiche Anwendungen mit.
 Hierzu werden die folgenden Kubernetes nativen Anwendungen genutzt:
 \begin{itemize}
   \item ExternalDNS
@@ -10,32 +9,34 @@ Hierzu werden die folgenden Kubernetes nativen Anwendungen genutzt:
   \item Cert-Manager
 \end{itemize}
 
-Zudem kommen mit dem Nutzen der Gaia-X Cloud, welche auf OpenStack basiert, der Service \textbf{Designate}
-für die DNS Konfiguration und \textbf{Cinder} als Storage Service dazu. 
+Zusätzlich kommen mit dem Nutzen des \acf{SCS} (siehe \ref{sec:gaia-x-einbettung:scs}),
+welcher auf OpenStack basiert, der Service \textbf{Designate}
+für DNS Konfiguration sowie \textbf{Cinder} als Storage Service dazu. 
 Designate und die Kubernetes Anwendung \textbf{ExternalDNS} werden miteinander
-verwendet, um für neue Ingress Ressourcen automatisch DNS Einträge zu erstellen. 
+verknüpft, um für neue Ingress Objekte des Service automatisch DNS Einträge zu erstellen. 
 
 Der \textbf{Nginx Ingress Controller} dient als Reverse Proxy für alle Ingress Ressourcen innerhalb des Clusters.
 Mithilfe des in \ref{sec:komponenten:operator} genannten Synchronisationsmechanismus wird der Nginx Webserver so 
-konfiguriert, sodass mittels Host Headern in Anfragen an den Server die jeweils richtige Route zu den Containern hergestellt wird. 
-Da der Controller als Proxy dient, muss zudem nur eine externe IP für alle Chat Services genutzt werden, was
-zu Kostenersparnissen in der Cloud führt. Die DNS Einträge für alle Chat Instanzen werden durch die Nutzung 
-von ExternalDNS auch automatisch an die IP des Loadbalancers für den Nginx Controller angepasst.
+konfiguriert, sodass mittels Host Headern in Anfragen an den Server die jeweils richtige Route zu den Containern hergestellt wird \cite{nginxIngressController}. 
+Da der Controller als Proxy dient, muss zudem nur eine externe IP und damit ein Loadbalancer für alle Chat Services genutzt werden.
+Dies führt zu Kostenersparnissen in der Cloud für den Provider und dadurch auch für den Kunden.
+Die DNS Einträge für alle Chat Instanzen werden durch die Nutzung 
+von ExternalDNS ebenfalls automatisch an die externe IP des Nginx Controller Loadbalancers angepasst \cite{externalDNS}.
 
-Um Zertifikate für HTTPS Verbindungen zu nutzen, wird die von JetStack entwickelte Anwendung Cert-Manager genutzt,
-welche die Erstellung von SSL Zertifikaten für Ingress Ressourcen vereinfacht. Hierbei wird eine \emph{Issuer} Ressource
-erstellt, welche als Zertizierungsstelle dient.\cite{CertManager2021} Hierbei gibt es mehrere unterstützte Typen, 
-wobei für die Referenzimplementation die Entscheidung zunächst auf selbstsignierte Zertifikate gefallen ist.
-Eine Umstellung auf ACME\footnote{Automated Certificate Managment Environment},
-wie beispielsweise \href{https://letsencrypt.org/de/}{Let's Encrypt}, welche kostenlose SSL Zerifikate anbieten,
+Um verschlüsselte TLS Verbindungen zu nutzen, wird die von JetStack entwickelte Anwendung \textbf{Cert-Manager} genutzt,
+welche die Erstellung von SSL Zertifikaten für Ingress Ressourcen vereinfacht. Im Cluster wird ein \emph{Issuer} Objekt
+erstellt, welche als Zertifizierungsstelle für neue Zertfikate dient \cite{CertManager2021}. 
+Ein Issuer unterstützt dabei mehrere Arten zur Erstellung neuer Zeritifkate.
+wobei für die Referenzimplementation die Entscheidung zunächst auf ein selbstsigniertes Zertifikat, dass neue Zertfikate signiert, gefallen ist \cite{CertManager2021}.
+Eine Umstellung auf einen andere Art, wie beispielweise ACME\footnote{Automated Certificate Managment Environment},
 ist jederzeit möglich. 
 Beim Erstellen einer Ingress Ressource wird die Annotation \texttt{cert-manager.io/issuer} mit dem gewünschten Issuer angehängt,
-auf welche die Cert-Manager Anwendung ein Zertifikat am Issuer erstellt. 
-Das in der Ingress Ressource referenzierte TLS Secret wird daraufhin vom Cert-Manager für das Zertifikat genutzt.
+auf welche die Cert-Manager Anwendung ein Zertifikat am Issuer erstellt \cite{CertManager2021}. 
+Das in der Ingress Ressource referenzierte TLS Secret wird daraufhin vom Cert-Manager für das Zertifikat genutzt \cite{CertManager2021}.
 
 \subsection{Identität- und Zugriffsmanagement}
-Kubernetes besitzt mit dem \ac{RBAC} System eine Möglichkeit innerhalb des Clusters Zugriffsrechte auf Ressourcen
-zu verwalten. In dieser Referenzimplementation soll nun ein außerhalb stehender Dienst für das Identitätsmanagment
+Kubernetes besitzt mit dem \ac{RBAC} System eine Möglichkeit innerhalb des Clusters Zugriffsrechte auf Objekte
+zu verwalten. In dieser Referenzimplementation soll nun ein außenstehender Dienst für das Identitätsmanagment
 zuständig sein. Hierbei wurde auf Basis der \ac{SCS} Architektur \emph{Keycloak} als OpenID Connect Provider gewählt.
 OpenID Connect ist eine Schicht überhalb des OAuth Frameworks, welches Clients die Möglichkeit bietet, Endnutzer
 an einer Authentifizierungsstelle zu verifizieren und Informationen über diese zu erhalten \cite{OpenID2021}.

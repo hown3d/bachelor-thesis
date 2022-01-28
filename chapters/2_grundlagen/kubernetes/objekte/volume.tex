@@ -5,10 +5,10 @@ sodass neue Dateien innerhalb eines Containers nach Neustart nicht mehr vorhande
 In manchen Fällen ist es gewünscht, produzierte Daten zu speichern.
 Kubernetes ermöglicht dies durch den Einsatz von \textbf{Volumes} \cite{Marko2018}.
 Im Grunde sind Volumes ein Verzeichnis auf das Container innerhalb des Pods zugreifen können \cite{kubernetesVolumes}.
-Volumes sind an den Lebenszyklus eines Pods gebunden. Falls ein Pod gelöscht wird, beispielsweise durch ein neues Deployment,
+Volumes sind an den Lebenszyklus eines Pods gebunden. Falls ein Pod gelöscht wird, beispielsweise durch eine neue Version des Deployment,
 wird das Volume ebenfalls gelöscht.
 Wenn eine containerisierte Anwendung peristenten Speicher auf einer Festplatte benötigt und dieser Speicher auch bei neuen Pods verfügbar sein soll,
-werden \acp{PV} genutzt \cite{Marko2018}.
+werden \acfp{PV} genutzt \cite{Marko2018}.
 
 \paragraph{Persistent Volumes}
 bieten eine Abstraktion für Benutzer und Administratoren der Speicherbereitstellung und -nutzung sowie

@@ -1,21 +1,21 @@
 \chapter{Datenschutz}
 \label{chapter:datenschutz}
 Hyperscaler Clouds wie \ac{AWS}, Microsoft Azure oder \ac{GCP} unterliegen dem amerikanischen \textbf{US Cloud Act}, welcher
-den Datenschutz in Europa gespeicherter Daten gefährdet \cite{Kagermann2021}. Der US Cloud Act besagt hierbei,
+den Datenschutz in Europa gespeicherter Daten gefährdet \cite{Kagermann2021}. Der US Cloud Act besagt,
 dass amerikanische Cloud Provider verpflichtet sind, jeglichen Datenverkehr zu einem Kunden zu speichern und 
 US-Behörden Zugriff auf jene Daten zu gewährleisten \cite{CloudAct2018}.
-Aufgrund dieses Gesetzes besteht beim Cloud Computing ein grundlegendes Problem 
+Aufgrund dieses Gesetzes besteht beim Cloud Computing in amerikanischen Clouds ein grundlegendes Problem 
 zur \emph{Integrität und Vertraulichkeit der Datenverarbeitung} \cite{Weichert2010}.
 
+% TODO: Kapitel zu gaia-X
 
 \section{Persistenz von Daten}
 \label{subsec:datenschutz:persistenz}
-Innerhalb des Kubernetes Clusters werden alle Chatnachrichten innerhalb der vom Operator bereitgestellten
-MongoDB gespeichert. Im Kubernetes Cluster sind alle Pods der MongoDB Container mithilfe eines StatefulSets 
-erstellt. Zur Persistenz wird das vom StatefulSet verwendet PersistVolume genutzt,
+Innerhalb des Kubernetes Clusters werden alle Chatnachrichten innerhalb der vom Operator bereitgestellten MongoDB gespeichert.
+Als Persistenzebene der MongoDB wird ein \ac{PV} genutzt,
 welches als Abstraktion für Speicherimplementierungen für Kubernetes dient.
 Als Implementierung dieser Abstraktion wird 
-Cinder\footnote{Block Storage Service von OpenStack} CSI\footnote{\href{https://github.com/kubernetes/cloud-provider-openstack/tree/master/pkg/csi/cinder}{Cinder CSI}} genutzt. 
+Cinder\footnote{Block Storage Service von OpenStack} \ac{CSI}\footnote{\href{https://github.com/kubernetes/cloud-provider-openstack/tree/master/pkg/csi/cinder}{Cinder CSI}} genutzt. 
 Eine Implementation des \ac{CSI} muss hierbei die folgenden Aktionen unterstützen \cite{container-storage-interface_2021}:
 \begin{itemize}
   \item Dynamische Provisionierung sowie Löschen von Volumes
@@ -26,8 +26,8 @@ Eine Implementation des \ac{CSI} muss hierbei die folgenden Aktionen unterstütz
   \item Erstellen eines neuen Volumes von einem Snapshot
 \end{itemize}
 
-Sobald im Cluster ein \ac{PVC} erstellt wird, kümmert sich die Anwendung um das Bereitstellen von 
-Cinder Volumes innerhalb der Cloud mittels dem Cinder Service von OpenStack \cite{cinderCSI}.
-Hierbei werden die Volumes immer in der selben Cloudumgebung wie die Knoten erstellt, wodurch der 
-Nutzer des Services sicherstellen kann, dass die Daten des genutztes Chat Services immer in der zuvor 
+Sobald im Cluster ein \ac{PVC} erstellt wird, kümmert sich das \ac{CSI} mittels dem Cinder Service von OpenStack 
+um die Bereitstellung von Speicher innerhalb der Plusserver Cloud \cite{cinderCSI}.
+Hierbei werden die Volumes immer in der selben Region wie die Knoten des Kubernetes Cluster erstellt \cite{kubernetesVolumes}.
+Der Nutzer des Services kann also sicher sein, dass die Daten des genutztes Chat Services immer in der zuvor 
 gewählten Region verwahrt werden.

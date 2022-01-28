@@ -9,15 +9,18 @@ Um diese Ausfallzeit zu minimieren, verwendet ein Deployment standardmäßig ein
 Hierbei werden bei Änderungen des Templates alte Pods nach und nach entfernt und zeitgleich neue Pods hinzugefügt.
 Dadurch wird sichergestellt, dass die Anwendung während des gesamten Prozesses verfügbar bleibt und die Kapazität zur Bearbeitung
 von Anfragen nicht nachlässt \cite{Marko2018}.
-Zur Veranschaulichung wird diese Strategie in \ref{fig:kubernetes_rolling_update} dargestellt.
 
-\begin{figure}
+\begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{gfx/chapters/2_grundlagen/deployment_rollout.png}
   \caption{Rolling Update Strategie eines Deployments}
   \label{fig:kubernetes_rolling_update}
   \source{\cite{Marko2018}}
 \end{figure}
+
+Zur Veranschaulichung wird diese Strategie in Abbildung \ref{fig:kubernetes_rolling_update} dargestellt.
+Sobald eine neue Version (v2) des Deployment Objekts im Cluster eingespielt wird, findet das Rolling Update statt.
+
 
 Die beiden meistgenutzten Tätigkeiten eines Deployments sind das Ändern sowie Skalieren von Anwendungen \cite{Burns2019}.
 Zudem bieten Deployments neben automatischer Aktualisierung von Pods die Möglichkeit des Zurückrollens von Änderungen \cite{kubernetesDeployments}.

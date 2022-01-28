@@ -11,7 +11,10 @@ Die europäische Cloud soll als vernetzte, europäische Alternative zu etabliert
 Microsoft Azure und \ac{GCP} dienen. Ziel ist eine homogene und standardisierte Dateninfrastruktur für europäische Cloudanbieter.
 Das Konzept der Gaia-X Cloud ist ein vernetztes Knotenprinzip, in dem Transparenz mittels einer Selbstbeschreibung der Services
 über Ort der Datenspeicherung und der verwendenten Technologie geboten wird.
-Die Teilnahme von Cloudanbietern an dem Projekt erfordert ein gewisser Standard, sowie die Erfüllung von Regeln durch eine Zertifizerung \cite{BMWi2019}.
+Die Teilnahme von Cloudanbietern an dem Projekt erfordert die Einhaltung gewisser Standards, 
+sowie die Erfüllung von Gaia-X Richtlinien durch eine Zertifizerung \cite{BMWi2019}.
+
+
 \ac{SaaS} Anwendungen in Gaia-X sollen mithilfe eines Katalogs für Nutzer verfügbar gemacht werden \cite{GXFS2021}.
 \ac{SaaS} ist ein Cloud-Dienst Angebot, welches die Bereitstellung und Verwaltung von betriebsbereiten, 
 gehosteten Anwendungen verspricht \cite{Krebs2012}.
@@ -26,7 +29,7 @@ Dieses Prinzip wurde 2016 von CoreOS\footnote{\url{https://coreos.com}} erstmals
 
 % Motiviation
 \paragraph{}
-Chat-Systeme, wie Rocket oder Slack, werden bereits in vielen Unternehmen ausschließlich oder im Zusammenhang mit E-Mails
+Chat-Systeme, wie Rocket.Chat oder Slack, werden bereits in vielen Unternehmen ausschließlich oder im Zusammenhang mit E-Mails
 zur Kommunikation innerhalb des Unternehmens genutzt. Daten dieser Chat-Systeme sind aus diesem Grund oftmals vertraulich
 und können Firmengeheimnisse sowie personenbezogene Daten enthalten. 
 Amerikanische Cloudanbieter unterliegen dem amerikanischen \textbf{US Cloud Act}, welcher
@@ -36,14 +39,15 @@ Betreibt ein Unternehmen nun ein Chat-System bei einem amerikanischen Cloud-Prov
 Als europäische Alternative zu etablierten Anbietern soll Gaia-X Abhilfe für dieses Problem schaffen.
 Dabei befindet sich die europäische Cloud aktuell noch im Entwicklungsstadium und ist dadurch nicht vollständig einsatzbereit.
 Aus diesem Grund soll in dieser Arbeit ein Ansatz für containerbasierte \ac{SaaS} Anwendungen in der Gaia-X Cloud gegeben werden.
-\citeauthor{Truyen2016} geben in \cite{Truyen2016} eine mögliche Architektur für die Entwicklung eines \acf{SaaS} vor.
-Die Architektur berücksichtigt allerdings nicht den Einsatz des Operator Patterns, 
-dass die Bereitstellung und Verwaltung der Softwarekomponenten deutlich vereinfacht \cite{Dobies2020}.
+% \citeauthor{Truyen2016} geben in \cite{Truyen2016} eine mögliche Architektur für die Entwicklung eines \acf{SaaS} vor.
+% Die Architektur berücksichtigt allerdings nicht den Einsatz des Operator Patterns, 
+% dass die Bereitstellung und Verwaltung der Softwarekomponenten deutlich vereinfacht \cite{Dobies2020}.
 
 % Lösung
 \paragraph{}
 Diese Arbeit dient als Referenzimplementation für einen 
-Chat \ac{SaaS}, welche auf dem Operator Pattern von Kubernetes basiert sowie mehrere \emph{Middleware Komponenten} nutzt.
+Rocket.Chat \ac{SaaS}, welche auf dem Operator Pattern von Kubernetes basiert sowie mehrere \emph{Middleware Komponenten} nutzt.
+Rocket.Chat ist dabei ein frei verfügbares Chatsystem, dass DSGVO-Konformität und Sicherheit verspricht \cite{RocketChat}.
 Der \ac{SaaS} wird in Kubernetes betrieben und für Endnutzer als zentrale Schnittstelle angeboten.
 Dazu wird eine lokale Testinfrastruktur mittels dem Framework OpenStack erstellt,
 welches als Basis für Gaia-X Services dient \cite{scs}.
@@ -65,5 +69,5 @@ wird aktuell allerdings noch nicht angeboten.
 Im weiteren Verlauf dieser Arbeit werden einige Grundlagen bezüglich Container und Kubernetes gegeben,
 sowie eine Vertiefung zum Thema Gaia-X und \acf{SaaS}.
 Es folgt die Erläuterung der einzelnen Komponenten der Referenzimplementation, sowie die Datensicherheit in Gaia-X.
-Im Kapitel \ref{chapter:gaia-x-einbettung} wird beschrieben, wie der Einsatz mit einer Gaia-X kompatiblen Umgebung ermöglicht wurde.
-Zuletzt wird in Abschnitt \ref{chapter:fazit} ein Fazit und Ausblick für die Zukunft gegeben.
+Kapitel \ref{chapter:gaia-x-einbettung} beschreibt, wie der Einsatz mit einer Gaia-X kompatiblen Umgebung ermöglicht wird.
+Zuletzt wird in Abschnitt \ref{chapter:fazit} ein Fazit, Ausblick für die Zukunft, sowie ein Vergleich zu verwandten Arbeiten gegeben.

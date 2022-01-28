@@ -1,10 +1,11 @@
 \section{Tenant Service}
 \label{sec:komponenten:tenant-service}
 Zur Konfiguration des Tenants im Cluster, wurde der Tenant Service zur Verwaltung von Nutzerkonfiguration im Cluster erstellt.
-Hierbei wird das gRPC Framework verwendet, um eine konistente API zu ermöglichen. Im Fall des Tenant Service
-besitzt die API nur einen \emph{Register} Endpoint. Dieser stellt sicher, dass für den gewünschten Nutzer 
-Kubernetes Roles und Rolebindings, ein Cert-Manager Issuer, sowie Resource Quotas angelegt wird. 
-Quotas beschreiben in diesem Fall die Last, welche ein Tenant innerhalb des Clusters produzieren darf \cite{Krebs2012}.
+Hierbei wird das gRPC Framework verwendet, um eine konistente API für zukünftige Entwicklung zu ermöglichen.
+Im Fall des Tenant Service besitzt die API nur einen \emph{Register} Endpoint.
+Dieser stellt sicher, dass für den gewünschten Nutzer 
+Kubernetes Role und Rolebinding Objekte, ein Cert-Manager Issuer, sowie Resource Quotas angelegt wird. 
+Resource Quotas beschreiben die Last, welche ein Tenant innerhalb des Clusters produzieren darf \cite{Krebs2012}.
 Da Rollen an einen Namespace gebunden sind, erhält jeder Tenant einen eigenen Namespace, um sicherzustellen,
 dass andere Nutzer keinen Zugriff auf die Ressourcen einer anderen Partei erlangen.
 Dieses Prinzip wird als \emph{Tenant Space} beschrieben. 
@@ -12,9 +13,6 @@ Nutzer bekommen isolierte Umgebungen von Ressourcen zur Verfügung gestellt \cit
 Jene Namespaces werden vom Rocket API Service genutzt, um die entsprechenden Rocket \acp{CR} der Nutzer zu verwalten. 
 
 Im Gegensatz zum Rocket API Service, verwendet der Tenant Service nicht das Prinzip der Identitätsübernahme, da
-der Service administrative Bereitstellungen für den Nutzer im Cluster vornimmt. 
+der Service administrative Bereitstellungen für den Nutzer im Cluster vornimmt und Nutzer dieses Recht nicht benötigen. 
 Diese Bereitstellung findet mit Hilfe eines Service Accounts, welcher als Identität für Anfragen 
-an die Kubernetes API dient, statt . Dieser Service Account besitzt die selben Rechte,
-wie die erstellten User Rollen, da Kubernetes nicht erlaubt, Rechte zu vergeben, wenn die anfragende Identität
-diese nicht besitzt.
-
+an die Kubernetes API dient und zusätzliche Rechte im Cluster hat, statt. 

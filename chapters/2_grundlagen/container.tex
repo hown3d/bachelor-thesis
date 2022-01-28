@@ -5,7 +5,7 @@ Dabei müssen, im Gegensatz zu \acfp{VM}, nicht ein zusätzliches Betriebsystem 
 Dadurch sind Container sehr ressourceneffizient \cite{Kane2018}.
 Alle Container, die innerhalb des Systems laufen, nutzen den Kernel des Hostsystems \cite{Marko2018}.
 Ein Prozess, der in einem Container läuft, läuft immer innerhalb des Host Betriebssystems.
-Der Prozess wird jedoch von anderen Prozessen isoliert, sodass für den Prozess es so aussieht, als würde er
+Der Prozess wird jedoch von anderen Prozessen isoliert, sodass es für den Prozess so aussieht, als würde er
 als einziger Prozess im System laufen \cite{Marko2018}.
 
 \begin{figure}
@@ -24,8 +24,8 @@ Namespaces sorgen für die Isolation der Prozesse,
 während cgroups ein Limit für Ressourcen eines Prozesses festlegen können \cite{Marko2018}.
 
 Container ermutigen Entwickler nach dem Konzept \emph{Immutable Infrastructure} zu arbeiten \cite{Burns2019}.
-Ein Immutable Infrastrucutre Prinzip ist, dass sobald eine Version beziehungsweise ein Artefakt einer Softwarekomponente erstellt wird,
-Nutzer keine Änderungen an der Anwendung im Artefakt vornehmen dürfen \cite{Burns2019}. 
+Das Immutable Infrastrucutre Prinzip besagt, dass sobald eine Version beziehungsweise ein Artefakt einer Softwarekomponente erstellt wird,
+Nutzer keine Änderungen an diesem Artfakt vornehmen dürfen \cite{Burns2019}. 
 Anstatt auf einem Server eine neue Version der Anwendung einzuspielen, werden neue Container Abbilder mit dem erstellen Artefakt gebaut, 
 und der laufende Container mit dem neuen Abbild ersetzt \cite{Burns2019}.
 

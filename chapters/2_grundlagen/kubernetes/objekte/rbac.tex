@@ -1,6 +1,6 @@
 \subsubsection{Rollenbasierte Zugriffskontrolle}
 \label{subsec:kubernetes:rbac}
-Rollenbasierte Zugriffskontrolle bietet einen Mechanismus zur Zugriffs- und Aktionsbeschränkung auf Kubernetes API Endpunkte.
+Rollenbasierte Zugriffskontrolle bietet einen Mechanismus zur Zugriffs- und Aktionsbeschränkung auf Kubernetes API Endpunkte \cite{kubernetesRbac}.
 Durch Nutzung dieser Kontrolle wird sichergestellt, dass nur vorgesehene Nutzer Zugriff auf gewisse API Endpunkte und damit deren
 Objekte besitzen \cite{Burns2019}.
 
@@ -14,5 +14,22 @@ Unterschieden werden im \ac{RBAC} System zwischen vier Kubernetes Objekten:
 
 Objekte mit dem Prefix \emph{Cluster} sind nicht auf einen Namespace im Cluster beschränkt \cite{kubernetesRbac}.
 \emph{Role} und \emph{ClusterRole} Objekte enthalten Regeln, die eine Gruppe von Berechtigungen enthält \cite{kubernetesRbac}.
-Um eine solche Role nun einem Nutzer oder \emph{Service Account} (\ref{subsec:kubernetes:serviceaccount}) zuzuweisen,
+
+\begin{lstlisting}[caption=Repräsentation eines Role Objekts in YAML, label=listing:role_yaml]
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default # Begrenzt auf den Namespace "default"
+  name: pod-reader
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods"]
+  verbs: ["get", "watch", "list"]
+\end{lstlisting}
+
+Als Beispiel wird in \ref{listing:role_yaml} die Repräsentation eines Role Objekts dargestellt. 
+Jeder Nutzer, der dieser Rolle besitzt, kann Pod Objekte im Namespace \emph{default} lesen.
+
+
+Um nun eine solche Role einem Nutzer oder \emph{Service Account} zuzuweisen,
 werden \emph{RoleBinding} und \emph{ClusterRoleBinding} Objekte genutzt \cite{Burns2019}.
