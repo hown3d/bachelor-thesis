@@ -13,6 +13,8 @@ dass jeder Pod ein eigenes \ac{PV} (siehe \ref{subsec:kubernetes:volume}) erhäl
   \label{fig:kubernetes:statefulsets}
   \source{\cite{Marko2018}}
 \end{figure}
+
+
 In Abbildung \ref{fig:kubernetes:statefulsets} wird dargestellt, wie ein StatefulSet diese Aufgabe übernimmt.
 Bei der Erstellung eines StatefulSets muss neben dem Template für die Pods ein \ac{PVC} angegeben werden. 
 Dieses \ac{PVC} dient als Grundlage für die Erstellung aller \acp{PV} der Pods \cite{Marko2018}.

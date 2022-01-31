@@ -40,11 +40,9 @@ Die Funktion zur Erstellung von Backups sowie der Validierung durch einen Admiss
 wurden allerdings in dieser Referenzimplementation nicht berücksichtigt wurden.
 
 
-\paragraph{}
 Eine Rocket.Chat Instanz besteht aus einer MongoDB, welche als Replicaset konfiguriert wird,
 sowie dem eigentlichen Webserver, der als Endpunkt für Rockets Clientsoftware dient \cite{rocketChatDocs}.
-
-Die Bereitstellung des Chat Services besteht aus den folgenden Kubernetes Objekten:
+Für die Bereitstellung eienr Chat Instanz werden die folgenden Kubernetes Objekte im Cluster angelegt:
 \begin{itemize}
   \item ConfigMap für MongoDB Scripts
   \item Secret für MongoDB Authentifizierung (Nutzername und Passwort)
@@ -56,6 +54,7 @@ Die Bereitstellung des Chat Services besteht aus den folgenden Kubernetes Objekt
   \item ServiceAccount
 \end{itemize}
 
+\newpage
 \subsection{Rocket Custom Resource}
 Als Schnittstelle für Kommunikation mit dem Operator dient das Rocket \ac{CR} Objekt.
 Dies wird im Code als nativer Datentyp definiert und schließlich zu einem \ac{CRD} generiert, um es im Kubernetes Cluster zu installieren.

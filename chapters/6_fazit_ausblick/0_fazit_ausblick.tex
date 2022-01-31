@@ -9,19 +9,22 @@ möglich, bringt allerdings noch einige Unvollständigkeiten mit.
 Aufgrund von noch sehr unausgereiften Implemtierungen der Gaia-X Services ist der produktive Einsatz eines \ac{SaaS}
 Modells noch nicht zu empfehlen. 
 Zu viele Services, die die europäische Cloud ausmachen sollen, sind nur als Referenzarchitekturen vorzufinden.
-In der Plusserver Open Cloud, die auf dem \acf{SCS} basiert, finden sich aktuell weitgehend \ac{IaaS} Services wieder.
-Diese Services belaufen sich größtenteils auf schlichte OpenStack Services, eine Innovation bleibt aus.
+Plusserver Open Cloud, die als erste Implementation von Gaia-X betitelt wird und auf dem \acf{SCS} basiert, 
+bietet aktuell weitgehend nur \ac{IaaS} Services an.
+Diese Services belaufen sich größtenteils auf schlichte OpenStack Services, 
+eine Innovation und damit Unterschied zu anderen Cloudanbietern bleibt dadurch aus.
 
-Kubernetes stellt sich allerdings als attraktive Plattform zum Bereitstellen und Verwalten dieser Services heraus.
+Kubernetes stellt sich allerdings als attraktive Plattform zum Bereitstellen, Skalieren und Verwalten von \acf{SaaS} heraus.
 Eine Zukunft des Containerorchestrierungsframework im Gaia-X Umfeld ist durchaus vorstellbar und wird ebenfalls von \ac{SCS}
 angestrebt \cite{scs}.
 
+\newpage
 \section{Ausblick}
 \label{sec:fazit_ausblick:fazit}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=1.1\textwidth]{gfx/chapters/6_fazit_ausblick/gaia-x-ausblick.png}
+  \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth]{gfx/chapters/6_fazit_ausblick/gaia-x-ausblick.png}}
   \caption{Fünfjahresplan der Gaia-X Initiative}
   \label{fig:gaia-x-ausblick}
   \source{\cite{Bonfiglio2021}}
@@ -34,9 +37,7 @@ Eine Implementation der aufgeführten Referenzarchitektur exisitert allerdings n
 
 \citeauthor{Bonfiglio2021} strebt im genannten Fünfjahresplan eine vollständige Implementierung der Föderationsservices
 im Jahr 2023 an.
-Durch die Enstehung eines neuen Markts soll Gaia-X 2025, in der Phase \emph{Scale},
+Durch die Entstehung eines neuen Markts durch die europäische Cloud soll Gaia-X 2025, in der Phase \emph{Scale},
 eine Konkurrenz für Hyperscaler Clouds im globalen Markt werden \cite{Bonfiglio2021}.
-
-
 
 \input{chapters/6_fazit_ausblick/related_work}

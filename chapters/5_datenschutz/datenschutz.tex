@@ -8,9 +8,17 @@ Aufgrund dieses Gesetzes besteht beim Cloud Computing in amerikanischen Clouds e
 zur \emph{Integrität und Vertraulichkeit der Datenverarbeitung} \cite{Weichert2010}.
 
 
-% TODO: Kapitel zu gaia-X
-\section{Datenschutz in Gaia-X}
-\label{subsec:datenschutz:gaia-x}
+Gaia-X stellt in \cite{Gaia-XPolicy} Richtlinien auf, welche jedes Service Angebot, das mit dem Gaia-X Framework bereitgestellt wird,
+befolgen muss. 
+Dabei sind im Punkt Datenschutz die Richtlinien des Artikel 26 und 28 der Datenschutz-Grundverordnung einzuhalten \cite{Gaia-XPolicy}.
+Im Kern müssen die folgenden Punkte der beiden DS-GVO Artikel abgedeckt sein \cite{Gaia-XPolicy}:
+\begin{itemize}
+  \item Service Provider sind streng an die Kundenvorgaben gebunden
+  \item Klare Definition wie der Kunde Vorageben erstellt (mittels API oder Konfigurationstool)
+  \item Bei Weitergabe von Daten an Drittanbieter muss dies explizit angeben, sowie getreu Artikel 5 der DS-GVO geschützt werden
+  \item Klare Definition inwiefern Unterauftragsverarbeiter der Daten involviert sind
+\end{itemize}
+
 
 \section{Persistenz von Daten im Kubernetes Cluster}
 \label{subsec:datenschutz:persistenz}
