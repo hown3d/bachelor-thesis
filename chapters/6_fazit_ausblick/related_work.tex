@@ -8,19 +8,20 @@ das Erstellen von \emph{Multi-Tenant}
 Innerhalb ihres Papers gehen sie auf die Vor- und Nachteile des Containeransatzes ein.
 Ein klarer Vorteil sei die Möglichkeit des Multi-Cloud Modells, da Kubernetes unabhängig der jeweiligen Cloud Anbieter einsetzbar ist.
 Isolationsmöglichkeiten zwischen den \emph{Tenants} habe einen hohen Anspruch für Sicherheit und Datenschutz.
-Ein weiterer Problemfall sei der hohe Aufwand zum Managment des Deployments\footnote{Bereitstellung} der Anwendung.
-Sie präsentieren eine Referenzarchitektur zum Erstellen von Container basierten Multi-Tenant SaaSs.
-Einen fehlenden Standard für Container Images bemängeln sie zum Zeitpunkt ihrer Veröffentlichung.
+Der hohe Aufwand des Managements für die Bereitstellung der Anwendung wird allerdings als problematisch angesehen.
+Sie präsentieren eine Referenzarchitektur zum Erstellen von Container basierten Multi-Tenant \acp{SaaS}.
+Zum Zeitpunkt ihrer Veröffentlichung bemängeln sie einen fehlenden Standard für Container Images.
 Als weiteren Verbesserungspunkt stellen \citeauthor{Truyen2016} drei Möglichkeiten zur Isolation von Tenants vor.
-Ein Einsatz des Kubernetes Operator Patterns, welche das Deployment der Anwendung an eine Komponente des \acf{SaaS} übergibt,
+Einen Einsatz des Kubernetes Operator Patterns, welche das Deployment der Anwendung an eine Komponente des \acf{SaaS} übergibt,
 wurde in diesem Falle nicht beachtet. Das Operator Pattern wurde 2016 von CoreOS vorgestellt, wodurch zum Erscheinungszeitpunkt
 des Papers dieses noch nicht vorhanden war.
 
 \paragraph{}
-Als weitere Möglichkeit zur Abstraktion von Softwaremanagment für Endnutzer entwickeln \citeauthor{Wieder2012} in ihrem Paper
-\cite{Wieder2012} ein System, das Cloud-Kunden von der Entscheidung befreit, welche Dienste innerhalb einer Cloud zu verwenden.
-Dabei wird speziell auf den Fall von MapReduce Operationen eingegangen. Kunden sollen nur entsprechende Ziele definieren, beispielsweise
-die Minimierung der Kosten, eine Berechnung, die in der Cloud ausgeführt werden soll, sowie eine Liste von Cloud Services.
+Als weitere Möglichkeit zur Abstraktion von SoftwareManagement für Endnutzer entwickeln \citeauthor{Wieder2012} in ihrem Paper
+\cite{Wieder2012} ein System, das Cloud-Kunden von der Entscheidung der Cloudservicewahl befreit.
+Dabei wird speziell auf den Fall von MapReduce Operationen eingegangen. Kunden sollen nur entsprechende Ziele definieren.
+Ein Ziel ist dabei beispielsweise die Minimierung der Kosten.
+Als Eingabe benötigt das Tool eine Map-Reduce Berechnung, sowie eine Liste von Cloud Services, die in Betracht gezogen werden sollen.
 Das System erstellt automatisch die Berechnung und optimiert während der Laufzeit die Anwendung basierend auf externen Zuständen.
 \citeauthor{Wieder2012} betrachten in ihrer Arbeit nur den Fall von MapReduce Operationen auf bereits existierenden Services
 und nicht die Erstellung eigener Services.

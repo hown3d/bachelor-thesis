@@ -25,12 +25,12 @@ von ExternalDNS ebenfalls automatisch an die externe IP des Nginx Controller Loa
 
 Um verschlüsselte TLS Verbindungen zu nutzen, wird die von JetStack entwickelte Anwendung \textbf{Cert-Manager} genutzt,
 welche die Erstellung von SSL Zertifikaten für Ingress Ressourcen vereinfacht. Im Cluster wird ein \emph{Issuer} Objekt
-erstellt, welche als Zertifizierungsstelle für neue Zertfikate dient \cite{CertManager2021}. 
+erstellt, welche als Zertifizierungsstelle für neue Zertifikate dient \cite{CertManager2021}. 
 Ein Issuer unterstützt dabei mehrere Arten zur Erstellung neuer Zertifkate, sowie RSA Schlüsselpaare \cite{CertManager2021}.
 Neu erstellte Zertifikate sowie Schlüssel werden in Secret Objekten abgelegt \cite{CertManager2021}.
 Für die Referenzimplementation ist die Entscheidung zunächst auf ein selbstsigniertes Zertifikat gefallen.
 Eine Umstellung des Issuers für den produktiven Einsatz, 
-wie beispielweise die Nutzung von ACME\footnote{Automated Certificate Managment Environment},
+wie beispielweise die Nutzung von ACME\footnote{Automated Certificate Management Environment},
 ist jederzeit möglich. 
 Beim Erstellen einer Ingress Ressource wird die Annotation \texttt{cert-manager.io/issuer} mit dem gewünschten Issuer angehängt,
 auf welche die Cert-Manager Anwendung ein Zertifikat am Issuer erstellt \cite{CertManager2021}. 
@@ -38,7 +38,7 @@ Das in der Ingress Ressource referenzierte TLS Secret wird daraufhin vom Cert-Ma
 
 \subsection{Identität- und Zugriffsmanagement}
 Kubernetes besitzt mit dem \ac{RBAC} System die Möglichkeit innerhalb des Clusters Zugriffsrechte auf Objekte
-zu verwalten. In dieser Referenzimplementation soll nun ein außenstehender Dienst für das Identitätsmanagment
+zu verwalten. In dieser Referenzimplementation soll nun ein außenstehender Dienst für das IdentitätsManagement
 zuständig sein. Hierbei wurde auf Basis der \ac{SCS} Architektur die Software \emph{Keycloak} als OpenID Connect Provider gewählt.
 OpenID Connect ist eine Schicht überhalb des OAuth Frameworks, welches Clients die Möglichkeit bietet, Endnutzer
 an einer Authentifizierungsstelle, in diesem Fall Keycloak, zu verifizieren und Informationen über diese zu erhalten \cite{OpenID2021}.

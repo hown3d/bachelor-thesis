@@ -4,27 +4,25 @@
 % Context, Motiviation, Lösungsweg, erzielte Ergebnisse, weiterer Aufbau
 
 % Context
-Das Projekt \emph{Gaia-X} wurde als Basis für eine föderale, offene Dateninfrastruktur auf der Grundlage europäischer Werte gegründet.
-Das Ziel der Initiative ist die Erstellung einer föderalisierten Dateninfrastruktur, 
-welche auf europäischen Werten zu Daten und Cloudsouveränität basiert \cite{GaiaXArchitecture2021}.
+Das Projekt \emph{Gaia-X} wurde als Basis für eine föderale, offene Dateninfrastruktur auf der Grundlage europäischer Werte gegründet \cite{GaiaXArchitecture2021}.
 Die europäische Cloud soll als vernetzte, europäische Alternative zu etablierten \emph{Hyperscaler Clouds}, wie \ac{AWS},
 Microsoft Azure und \ac{GCP} dienen. Ziel ist eine homogene und standardisierte Dateninfrastruktur für europäische Cloudanbieter.
 Das Konzept der Gaia-X Cloud ist ein vernetztes Knotenprinzip, in dem Transparenz mittels einer Selbstbeschreibung der Services
-über Ort der Datenspeicherung und der verwendenten Technologie geboten wird.
+über Ort der Datenspeicherung und der verwendeten Technologie geboten wird.
 Die Teilnahme von Cloudanbietern an dem Projekt erfordert die Einhaltung gewisser Standards, 
-sowie die Erfüllung von Gaia-X Richtlinien durch eine Zertifizerung \cite{BMWi2019}.
+sowie die Erfüllung von Gaia-X Richtlinien durch eine Zertifizierung \cite{BMWi2019}.
 
 
 \ac{SaaS} Anwendungen in Gaia-X sollen mithilfe eines Katalogs für Nutzer verfügbar gemacht werden \cite{GXFS2021}.
 \ac{SaaS} ist ein Cloud-Dienst Angebot, welches die Bereitstellung und Verwaltung von betriebsbereiten, 
 gehosteten Anwendungen verspricht \cite{Krebs2012}.
-Da die funktionalen und nicht-funktionalen Anforderungen von \emph{Tenants} sich unterscheiden können,
+Da sich die funktionalen und nicht-funktionalen Anforderungen von \emph{Tenants} unterscheiden können,
 müssen Anwendungen konfigurierbar sein \cite{Schroeter2012}. 
-Moderne container-basierte Anwendungsplattformen vereinfachen das Management und die Entwicklung
+Moderne containerbasierte Anwendungsplattformen vereinfachen das Management und die Entwicklung
 von Software. Kubernetes \cite{kubernetes} ist eine Open Source Containerorchestrierungsplattform und gilt im
-Cloud Native Umfeld als defacto Standard API für den Betrieb von Cloud-native Anwendungen \cite{Burns2019}.
+Cloud Native Umfeld als defacto Standard API für den Betrieb von cloud-native Anwendungen \cite{Burns2019}.
 Es bietet die Möglichkeit, skalierbare und verteilte Systeme zu erstellen und zu warten \cite{Burns2019}.
-Kubernetes Operatoren können die Kubernetes API durch eigene Ressourcen zu erweitern. 
+Kubernetes Operatoren können die Kubernetes API durch selbstdefinierte Objekte erweitern. 
 Dieses Prinzip wurde 2016 von CoreOS\footnote{\url{https://coreos.com}} erstmals vorgestellt.
 
 % Motiviation
@@ -46,7 +44,7 @@ Aus diesem Grund soll in dieser Arbeit ein Ansatz für containerbasierte \ac{Saa
 % Lösung
 \paragraph{}
 Diese Arbeit dient als Referenzimplementation für einen 
-Rocket.Chat \ac{SaaS}, welche auf dem Operator Pattern von Kubernetes basiert sowie mehrere \emph{Middleware Komponenten} nutzt.
+Rocket.Chat \ac{SaaS}, welche auf dem Operator Pattern von Kubernetes basiert, sowie mehrere \emph{Middleware Komponenten} nutzt.
 Rocket.Chat ist dabei ein frei verfügbares Chatsystem, dass DS-GVO-Konformität und Sicherheit verspricht \cite{RocketChat}.
 Der \ac{SaaS} wird in Kubernetes betrieben und für Endnutzer als zentrale Schnittstelle angeboten.
 Dazu wird eine lokale Testinfrastruktur mittels dem Framework OpenStack erstellt,

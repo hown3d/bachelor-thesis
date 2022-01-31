@@ -3,10 +3,10 @@
 
 Clients dienen als Schnittstelle zwischen Endnutzer und dem Rocket API- sowie Tenant Service. 
 Hierfür wurde ein \ac{CLI} Tool erstellt, welches alle API Endpunkte der Services
-unterstützt. Zudem besitzt das CLI Tool einen Mechanismus, um OpenID Tokens vom Keycloak Server anzufragen.
+unterstützt. Zudem besitzt das \ac{CLI} Tool einen Mechanismus, um OpenID Tokens vom Keycloak Server anzufragen.
 Hierbei wird ein minimaler HTTP Server zur Laufzeit erstellt, welcher als \emph{Callback} für den Keycloak Server dient.
 Sobald ein Nutzer sich über den Browser in Keycloak anmeldet, wird er auf den Callbackendpunkt des HTTP Servers
 zurückgeleitet, welcher das Token persistiert. Dadurch müssen User sich nicht bei jeder Anfrage an die API 
-anmelden, sondern die CLI fordert im Hintergrund neue Tokens mit Hilfe des abgelaufenen Tokens an,
+anmelden, sondern die \ac{CLI} fordert im Hintergrund neue Tokens mit Hilfe des abgelaufenen Tokens an,
 um weitere Anfragen zu stellen.
 Mit diesem Token können sich Nutzer an den jeweiligen Services authentifizieren.

@@ -20,7 +20,7 @@
   - +portability
   - +scalability
   - -security
-  - -increased managment configuration
+  - -increased Management configuration
 - optimize cost efficiency
 - multi-cloud and hybrid cloud deployment
   - need to be portable between clouds

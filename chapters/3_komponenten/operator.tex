@@ -31,18 +31,18 @@ Diesen Synchronisationsmechanismus nennt man \emph{Reconciliation}.
 Der für diese Referenzimplementation eines Chat \ac{SaaS} entwickelte Operator nutzt diesen Synchronisationsmechanismus,
 um die Erstellung der Rocket.Chat Instanz zu vereinfachen.
 Der Rocket API Server erstellt ein Rocket Objekt im Cluster und überlässt jegliche Verwaltung der eigentlichen Instanz dem Operator.
-Operatoren können sich zusätzlich zur Bereitstellung und Konfiguration der Anwendung auch um die Funktionen Backup
-und automatische Reparatur des Services kümmern \cite{Dobies2020}.
+Operatoren können sich zusätzlich zur Bereitstellung und Konfiguration der Anwendung auch um das Backup
+und die automatische Reparatur des Services kümmern \cite{Dobies2020}.
 Zur Einhaltung von validen Schemas des Objekts (siehe \ref{subsection:kubernetes:customresource}),
 wie beispielsweise die Nutzung eines existierenden Container Images für den Rocket Webserver,
 kann ein \emph{Admission Controller} genutzt werden.
 Die Funktion zur Erstellung von Backups sowie der Validierung durch einen Admission Controller
-wurden allerdings in dieser Referenzimplementation nicht berücksichtigt wurden.
+wurden allerdings in dieser Referenzimplementation nicht berücksichtigt.
 
 
 Eine Rocket.Chat Instanz besteht aus einer MongoDB, welche als Replicaset konfiguriert wird,
 sowie dem eigentlichen Webserver, der als Endpunkt für Rockets Clientsoftware dient \cite{rocketChatDocs}.
-Für die Bereitstellung eienr Chat Instanz werden die folgenden Kubernetes Objekte im Cluster angelegt:
+Für die Bereitstellung einer Chat Instanz werden die folgenden Kubernetes Objekte im Cluster angelegt:
 \begin{itemize}
   \item ConfigMap für MongoDB Scripts
   \item Secret für MongoDB Authentifizierung (Nutzername und Passwort)
@@ -56,12 +56,12 @@ Für die Bereitstellung eienr Chat Instanz werden die folgenden Kubernetes Objek
 
 \newpage
 \subsection{Rocket Custom Resource}
-Als Schnittstelle für Kommunikation mit dem Operator dient das Rocket \ac{CR} Objekt.
+Als Schnittstelle für die Kommunikation mit dem Operator dient das Rocket \ac{CR} Objekt.
 Dies wird im Code als nativer Datentyp definiert und schließlich zu einem \ac{CRD} generiert, um es im Kubernetes Cluster zu installieren.
 Genauer dargestellt wird die Spezifikation des Objekts in \ref{chap:rocketchat_crd_spec}.
 Nutzer des Kubernetes Cluster können selbst Rocket \acp{CR} Objekte via YAML oder JSON Dateien erstellen und
 an die Kubernetes API schicken. Dieser Anwendungsfall ist für Kunden allerdings nicht vorgesehen.
-Endnutzer sollen sich nicht mit der Komplexität von Kubernetes auseinander setzen müssen,
+Endnutzer sollen sich nicht mit der Komplexität von Kubernetes auseinandersetzen müssen,
 sondern nur per Konfiguratorclient (\ac{CLI} oder Webinterface) ihren Chat Service erstellen.
 
 

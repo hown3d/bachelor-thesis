@@ -2,7 +2,7 @@
 \label{sec:gaia-x-einbettung:erstellung-testinfra}
 Bei der Erstellung der Testinfrastruktur kam es zu einigen Einschränkungen im Vergleich zu bereits etablierten Hyperscaler Clouds,
 da zum Zeitpunkt der Thesis nur Infrastruktur Services wie Netzwerke, DNS, \acp{VM} und Speicher
-und kein Managed Kubernetes Service zur Verfügung stehen.
+und kein Managed Kubernetes Service zur Verfügung standen.
 Durch die unterliegende Architektur des Gaia-X Providers kann allerdings bereits etablierte Software
 zur Erstellung von Kubernetes Clustern genutzt werden.
 Dazu wurde das Tool \textbf{Kubespray}\footnote{\url{https://github.com/kubernetes-sigs/kubespray}} genutzt,
@@ -10,7 +10,7 @@ welches mit Hilfe der Konfigurationssoftware \textbf{Ansible} und der \ac{IaC} S
 \acp{VM}, Netzwerk und Sicherheitsgruppen für die Kubernetes Knoten in der Cloud erstellt.
 
 Aufgrund der zeitlichen Begrenzung der Testlizenz auf 30 Tage wurde jedoch zusätzlich eine lokal
-testbare Version der benötigten OpenStack Services erstellt, 
-Alle benötigen Services sowie eine vollwertiges Kubernetes Cluster werden in Containern bereitgestellt,
-sodass diese lokal betrieben werden können.
+testbare Version der benötigten OpenStack Services erstellt.
+Alle benötigen Services, sowie eine vollwertiges Kubernetes Cluster, werden in Containern bereitgestellt,
+sodass sie lokal betrieben werden können.
 Somit kann die Cloudunabhängigkeit von Kubernetes zum Vorteil für Entwickler und der schnellen Entwicklung genutzt werden.

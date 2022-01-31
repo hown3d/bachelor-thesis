@@ -1,12 +1,12 @@
 \section{Container}
 \label{sec:grundlagen:container}
 Container sind eine Virtualisierungslösung für Anwendungen.
-Dabei müssen, im Gegensatz zu \acfp{VM}, nicht ein zusätzliches Betriebsystem virtualiert werden \cite{Marko2018}.
+Dabei müssen, im Gegensatz zu \acfp{VM}, nicht ein zusätzliches Betriebsystem virtualisiert werden \cite{Marko2018}.
 Dadurch sind Container sehr ressourceneffizient \cite{Kane2018}.
 Alle Container, die innerhalb des Systems laufen, nutzen den Kernel des Hostsystems \cite{Marko2018}.
-Ein Prozess, der in einem Container läuft, läuft immer innerhalb des Host Betriebssystems.
-Der Prozess wird jedoch von anderen Prozessen isoliert, sodass es für den Prozess so aussieht, als würde er
-als einziger Prozess im System laufen \cite{Marko2018}.
+Ein Prozess, der in einem Container betrieben wird, läuft immer innerhalb des Host Betriebssystems.
+Der Prozess wird jedoch von anderen Prozessen des Hostsystems isoliert, sodass es für ihn so aussieht, als würde er
+als Einziger im System laufen \cite{Marko2018}.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{gfx/chapters/2_grundlagen/container-vs-vm.png}
@@ -24,7 +24,7 @@ Namespaces sorgen für die Isolation der Prozesse,
 während cgroups ein Limit für Ressourcen eines Prozesses festlegen können \cite{Marko2018}.
 
 Container ermutigen Entwickler nach dem Konzept \emph{Immutable Infrastructure} zu arbeiten \cite{Burns2019}.
-Das Immutable Infrastrucutre Prinzip besagt, dass sobald eine Version beziehungsweise ein Artefakt einer Softwarekomponente erstellt wird,
+Das Immutable Infrastructure Prinzip besagt, dass sobald eine Version, beziehungsweise ein Artefakt, einer Softwarekomponente erstellt wird,
 Nutzer keine Änderungen an diesem Artfakt vornehmen dürfen \cite{Burns2019}. 
 Anstatt auf einem Server eine neue Version der Anwendung einzuspielen, werden neue Container Abbilder mit dem erstellen Artefakt gebaut, 
 und der laufende Container mit dem neuen Abbild ersetzt \cite{Burns2019}.

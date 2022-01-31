@@ -3,7 +3,7 @@
 Die Architektur von Kubernetes besteht aus Rechnern, welche zu einem Cluster zusammengeschlossen werden \cite{kubernetesComponents}.
 Hierbei besteht das Cluster aus einer oder mehreren \textbf{Worker machines}, welche in Kubernetes \emph{Knoten}
 genannt werden \cite{kubernetesComponents}. Diese Knoten sind dafür zuständig die eigentliche Last, die \textbf{Pods} (siehe \ref{subsec:kubernetes:pods}), zu betreiben.
-Die Kontrollebene\footnote{Containerorchestrationsschicht, welche die API zum Definieren, Bereitstellen und Verwalten von Containern bereitstellt}
+Die Kontrollebene\footnote{Containerorchestrationsschicht, welche die API für CRUD von Objekten definiert}
 ist verantworlich für die Verwaltung von Knoten und Pods innerhalb des Clusters \cite{kubernetesComponents}. 
 Um Fehlertoleranz und eine hohe Verfügbarkeit zu gewährleisten, besitzt ein Kubernetes Cluster mehrere Knoten und
 die Kontrollebene läuft verteilt über mehrere Systeme \cite{kubernetesComponents}. 
@@ -26,13 +26,13 @@ Die Kontrollebene besteht dabei aus den folgenden Teilen:
 \end{itemize}
 
 \paragraph{Etcd} dient als Key-Value Speicher für jegliche Cluster Daten.
-Der API-Server ist hierbei die einzige Komponente im Cluster, welche direkt mit dem verteilten Speichersytem interagiert \cite{Hausenblas2019}.
+Der API-Server ist hierbei die einzige Komponente im Cluster, welche direkt mit dem verteilten Speichersystem interagiert \cite{Hausenblas2019}.
 
 \paragraph{Kube-Scheduler} wird im Cluster eingesetzt, um neu erstellte Pods einem Knoten zuzuweisen.
-Hierbei werden Werte wie Ressourcenanforderungen, Hardware, Software oder Richtlinien Beschränkungen 
+Hierbei werden Werte wie Ressourcenanforderungen, Hardware, Software oder Richtlinienbeschränkungen 
 als Faktoren für die Zuweisung verwendet \cite{kubernetesComponents}.
 
-\paragraph{Kube-apiserver} ist der Einstiegspunkt und die zentrale Managmenteinheit des Cluster \cite{Hausenblas2019}. 
+\paragraph{Kube-apiserver} ist der Einstiegspunkt und die zentrale Managementeinheit des Cluster \cite{Hausenblas2019}. 
 Alle Anfragen an das Cluster werden über den API-Server verarbeitet.
 Strukturiert ist der API-Server mithilfe einer REST-HTTP API, welche JSON Daten für Anfragen außerhalb des Clusters
 oder Protobuf\footnote{Protobuf ist Googles sprach- und plattformneutraler, erweiterbare Mechanismus zur Serialisierung strukturierter Daten \cite{protobuf}.}
@@ -53,7 +53,7 @@ Jeder Knoten, der dem Cluster angeschlossen ist, besitzt folgende Komponenten:
 \end{itemize}
 
 \paragraph{Kubelet} wird als \emph{Agent} auf jedem Knoten im Cluster ausgeführt. 
-Der Agent registiert den Knoten am Cluster und ist für die Bereitstellung der Pods zuständig.
+Der Agent registriert den Knoten am Cluster und ist für die Bereitstellung der Pods zuständig.
 Kubelet ist dabei ausschließlich für Container zuständig, die von Kubernetes erstellt wurden \cite{kubernetesComponents}.
 
 \paragraph{Kube-Proxy} ist ein Netzwerk Proxy, der für die Implementierung des Service Konzepts \ref{subsec:kubernetes:service}
