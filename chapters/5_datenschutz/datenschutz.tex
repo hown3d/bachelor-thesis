@@ -7,9 +7,12 @@ US-Behörden Zugriff auf jene Daten zu gewährleisten \cite{CloudAct2018}.
 Aufgrund dieses Gesetzes besteht beim Cloud Computing in amerikanischen Clouds ein grundlegendes Problem 
 zur \emph{Integrität und Vertraulichkeit der Datenverarbeitung} \cite{Weichert2010}.
 
-% TODO: Kapitel zu gaia-X
 
-\section{Persistenz von Daten}
+% TODO: Kapitel zu gaia-X
+\section{Datenschutz in Gaia-X}
+\label{subsec:datenschutz:gaia-x}
+
+\section{Persistenz von Daten im Kubernetes Cluster}
 \label{subsec:datenschutz:persistenz}
 Innerhalb des Kubernetes Clusters werden alle Chatnachrichten innerhalb der vom Operator bereitgestellten MongoDB gespeichert.
 Als Persistenzebene der MongoDB wird ein \ac{PV} genutzt,
@@ -19,7 +22,7 @@ Cinder\footnote{Block Storage Service von OpenStack} \ac{CSI}\footnote{\href{htt
 Eine Implementation des \ac{CSI} muss hierbei die folgenden Aktionen unterstützen \cite{container-storage-interface_2021}:
 \begin{itemize}
   \item Dynamische Provisionierung sowie Löschen von Volumes
-  \item Anhängen oder abtrennen von Volumes an einem Knoten
+  \item Anhängen oder Abtrennen von Volumes an einem Knoten
   \item Einhängen und Aushängen von Volumes an einem Knoten.
   \item Verwaltung von sowohl Block- als auch einhängbarer Volumes
   \item Erstellung und Löschen von Snapshots (Quelle eines Snapshots ist immer ein Volume)
